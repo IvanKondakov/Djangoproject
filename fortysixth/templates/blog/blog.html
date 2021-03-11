@@ -1,0 +1,37 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}
+Blog
+{% endblock %}
+{% block active5 %} class="active" {% endblock %}
+{% block content %}
+
+<!-- ======= Blog Section ======= -->
+<section id="services" class="services">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Blog</h2>
+            {% if blog %}
+            {% for el in blog %}
+            <div class="card">
+                <div class="card-header">
+                    <h4><strong>{{ el.title }}</strong></h4>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <h6><p>{{ el.full_text }}</p></h6>
+                        <footer class="blockquote-footer"><cite title="Source Title">{{ el.created_at }}</cite></footer>
+                    </blockquote>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p> Nothing </p>
+            {% endif %}
+        </div>
+           <a href="{% url 'create' %}"><button type="button" class="btn btn-info"><i class="bx bx-plus-medical"> </i> Add new post </button></a>
+    </div>
+</section><!-- End Blog Section -->
+
+{% endblock %}

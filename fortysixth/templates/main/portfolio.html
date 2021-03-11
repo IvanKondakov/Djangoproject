@@ -1,0 +1,58 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}
+Portfolio
+{% endblock %}
+{% block active4 %} class="active" {% endblock %}
+{% block content %}
+
+  <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="divider-1"> </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="{% static 'main/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="{% static 'main/img/portfolio/portfolio-2.jpg' %}" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+                <a href="https://www.coursera.org/account/accomplishments/certificate/KLTUEBTWE9DD" title="link"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+             <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="margin-top: 30px">
+            <div class="portfolio-wrap">
+              <img src="{% static 'main/img/portfolio/portfolio-1.png' %}" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-plus"></i></a>
+                <a href="https://github.com/IvanKondakov/myHealth" title="More Details"><i class='bx bxl-github'></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="{% static 'main/img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="{% static 'main/img/portfolio/portfolio-3.jpg' %}" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a>
+                <a href="https://www.coursera.org/account/accomplishments/certificate/SEH8SZLBCNCP" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+{% endblock %}
