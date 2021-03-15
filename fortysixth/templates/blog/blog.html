@@ -18,15 +18,17 @@ Blog
                     <div class="card-header">
                         <div class="row">
                             <div class="col-lg">
-                                <h4><strong>{{ el.title }}</strong></h4>
+                              <h4><strong>{{ el.title }}</strong></h4>
                             </div>
-                        <a href="{% url 'blog_detail' el.id %}"> <i class="far fa-edit"></i> </a>
+                        <a href="{% url 'blog_update' el.id %}"><i class="far fa-edit"></i></a>
                     </div>
                 </div>
                 <div class="card-body">
                     <blockquote class="blockquote mb-0">
                         <h6><p>{{ el.full_text }}</p></h6>
-                        <footer class="blockquote-footer"><cite title="Source Title">{{ el.created_at }}</cite></footer>
+                        <footer class="blockquote-footer"><cite title="Source Title">
+                            {{ el.created_at }}
+                        </cite></footer>
                     </blockquote>
                 </div>
             </div>

@@ -6,10 +6,13 @@ class Blog(models.Model):
     intro = models.CharField('Анонс', max_length=250)
     full_text = models.TextField('Статья')
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    updated_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return f'/blog/{self.id}'
 
     class Meta:
         verbose_name = 'Blog'
