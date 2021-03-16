@@ -1,0 +1,24 @@
+{% extends 'registration/layout_reg.html' %}
+{% load static %}
+
+{% block title %}
+Вход
+{% endblock %}
+
+{% block content %}
+<div class="wrapper fadeInDown">
+  <div id="formContent" style="max-width: 650px;">
+
+    <h1> You are now logged out </h1>
+    <div class="row">
+        <div class="col-sm">
+            <a href="{% url 'sign-up' %}"><input type="submit" class="fadeIn fourth" value="sign up"></a>
+        </div>
+        <div class="col-sm">
+            <a href="{% url 'login' %}"><input type="submit" class="fadeIn fourth" value="Log In" style="background-color: #dc3545;"></a>
+        </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

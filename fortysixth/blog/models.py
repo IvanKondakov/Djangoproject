@@ -1,10 +1,10 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 
 class Blog(models.Model):
     title = models.CharField('Название', max_length=50)
-    intro = models.CharField('Анонс', max_length=250)
-    full_text = models.TextField('Статья')
+    full_text = RichTextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
 

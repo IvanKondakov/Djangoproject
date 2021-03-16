@@ -12,11 +12,12 @@ Blog
         <form method="post" id=add>
             {% csrf_token %}
             <div class="form-group">
-                <label for="exampleFormControlInput1">Edit Title</label>
+                <label for="exampleFormControlInput1"><strong>Title</strong></label>
                 {{ form.title }}
             </div>
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Edit Text</label>
+
+                {{ form.media }}
                 {{ form.full_text }}
             </div>
         </form>
