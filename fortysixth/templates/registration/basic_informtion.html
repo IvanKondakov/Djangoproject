@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}
+Edit profile information
+{% endblock %}
+{% block content %}
+
+    <form method="post">
+      {% csrf_token %}
+      <label for="">Enter your username</label> <br />
+       {{ form.username }} <br />
+      <label for="">Email</label> <br />
+       {{ form.email}}
+      <label for="">Password</label> <br />
+       {{ form.password1}}
+      <label for="">Confirm your password</label> <br />
+       {{ form.password2}}
+      <input type="submit" class="fadeIn fourth" value="Let's start">
+    </form>
+
+{% endblock %}

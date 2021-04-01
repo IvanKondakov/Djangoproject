@@ -1,11 +1,11 @@
 from .models import Blog
-from django.forms import ModelForm, TextInput, Textarea
+from django.forms import ModelForm, TextInput, Textarea, Select
 
 
 class BlogForm(ModelForm):
     class Meta:
         model = Blog
-        fields = ['title', 'full_text']
+        fields = ['title', 'full_text', 'author', 'image']
 
         widgets = {
             "title": TextInput(attrs={
@@ -16,7 +16,11 @@ class BlogForm(ModelForm):
             "full_text": Textarea(attrs={
                 'class': 'form-control',
                 'placeholder': 'Text',
-                'id': "exampleFormControlTextarea1"
+            }),
+            "author": TextInput(attrs={
+                'class': 'form-control',
+                'value': "",
+                'id': "au",
+                'type': "hidden"
             })
         }
-

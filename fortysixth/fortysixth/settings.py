@@ -39,10 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'blog',
-    'ckeditor',
+    'aft',
+    'django_quill',
+    #'ckeditor',
 ]
-
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -118,14 +118,33 @@ USE_L10N = True
 
 USE_TZ = True
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+QUILL_CONFIGS = {
+    'default':{
+        'theme': 'snow',
+        'modules': {
+            'syntax': True,
+            'toolbar': [
+                [{ 'header': [1, 2, 3, 4, 5, 6, False] }],
+                ['bold', 'italic'],
+                ['blockquote','link', 'image'],
+                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                [{ 'align': [] }],
+            ]
+        }
+    }
+}

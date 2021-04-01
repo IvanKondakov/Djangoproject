@@ -1,18 +1,43 @@
 {% extends 'main/layout.html' %}
 {% load static %}
 {% block title %}
-{{ blog.title }}
+Blog
 {% endblock %}
 {% block active5 %} class="active" {% endblock %}
 {% block content %}
 
-<!-- ======= View ======= -->
+<!-- ======= Blog Section ======= -->
 <section id="services" class="services">
     <div class="container">
-        <h1>{{ blog.title }}</h1>
-        <p>{{ blog.created_at }}</p>
-        <p>{{ blog.full_text }}</p>
-    </div>
-</section><!-- End View Section -->
 
+        <div class="section-title">
+            <h2>Blog</h2>
+            <ul>
+                {% for post in blog %}
+                <li>
+                    {{ post.title }}
+                </li>
+                {% endfor %}
+            </ul>
+
+            {% if page_obj.paginator.num_pages > 1 %}
+
+            {% if page_obj.has_previous %}
+
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+
+            {% endif %}
+
+            <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+            {% if page_obj.has_next %}
+
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+
+            {% endif %}
+
+            {% endif %}
+        </div>
+    </div>
+</section><!-- End Blog Section -->
 {% endblock %}

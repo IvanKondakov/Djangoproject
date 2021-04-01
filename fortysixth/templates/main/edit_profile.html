@@ -1,0 +1,38 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}
+Главная страницы
+{% endblock %}
+{% block active1 %} class="active" {% endblock %}
+
+{% block content %}
+
+<section id="about" class="about">
+    <div class="container" data-aos="fade-in">
+        <h1>Edit Profile | {{ user.first_name }} {{ user.last_name }}</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="">Username
+                </label> <br>
+                {{ form.username}} <br>
+                <label for="">First name
+                </label> <br>
+                {{ form.first_name }} <br>
+                <label for="">Last name
+                </label> <br>
+                {{ form.last_name}} <br>
+                <label for="">Email
+                </label> <br>
+                {{ form.email }} <br>
+                {% if user.is_authenticated %}
+                {% endif %}
+            </div>
+            <input class="btn btn-success" type="submit" value="Add">
+        </form>
+    </div>
+</section><!-- End Hero -->
+
+
+{% endblock %}

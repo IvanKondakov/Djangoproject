@@ -4,41 +4,73 @@
 Blog
 {% endblock %}
 {% block active5 %} class="active" {% endblock %}
+{% block css %}
+<link href="{% static 'main/css/blog.css' %}" rel="stylesheet">
+{% endblock %}
 {% block content %}
-
 <!-- ======= Blog Section ======= -->
 <section id="services" class="services">
     <div class="container">
 
         <div class="section-title">
             <h2>Blog</h2>
+            <a href="{% url 'create' %}"><button type="button" class="btn btn-info"><i class="bx bx-plus-medical"> </i> Add new post </button></a>
             {% if blog %}
             {% for el in blog %}
-            <div class="card">
-                    <div class="card-header">
-                        <div class="row">
-                            <div class="col-lg">
-                              <h4><strong>{{ el.title }}</strong></h4>
-                            </div>
+            {% if user.is_authenticated %}
+            {% if user.id == el.author.id %}
+                <div class="card" style="margin-top: 10px">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-lg">
+                            <h4><strong>{{ el.title }}</strong></h4>
+                        </div>
                         <a href="{% url 'blog_update' el.id %}"><i class="far fa-edit"></i></a>
                     </div>
                 </div>
                 <div class="card-body">
                     <blockquote class="blockquote mb-0">
-                        <h6><p>{{ el.full_text | safe }}</p></h6>
+                        <h6>
+                            <p>{{ el.full_text.html | safe }}</p>
+                        </h6>
                         <footer class="blockquote-footer"><cite title="Source Title">
-                            {{ el.created_at }}
-                        </cite></footer>
+                                <b> {{ el.author.first_name }} {{ el.author.last_name }} </b>| {{ el.created_at }}
+                            </cite></footer>
                     </blockquote>
                 </div>
-            </div>
-            {% endfor %}
-            {% else %}
+                </div>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+                {% else %}
             <p> Nothing </p>
             {% endif %}
         </div>
-           <a href="{% url 'create' %}"><button type="button" class="btn btn-info"><i class="bx bx-plus-medical"> </i> Add new post </button></a>
-    </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    {% if page_obj.paginator.num_pages > 1 %}
+
+                    {% if page_obj.has_previous %}
+
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">previous</a> </li>
+
+                    {% endif %}
+
+                    <li class="page-item active"><a class="page-link" href="?page={{ page_obj.number }}"> {{ page_obj.number }}</a> </li>
+
+                    {% if page_obj.has_next %}
+
+                    <li class="page-item"><a class="page-link"> ... </a></li>
+
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}"> {{ page_obj.paginator.num_pages }} </a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a></li>
+
+                    {% endif %}
+
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
 </section><!-- End Blog Section -->
 
 {% endblock %}

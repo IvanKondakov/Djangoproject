@@ -1,0 +1,61 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}
+About
+{% endblock %}
+{% block active2 %} class="active" {% endblock %}
+{% block content %}
+<!-- ======= About Section ======= -->
+{% if user.id == profile.user.id %}
+<section id="about" class="about">
+    <div class="container">
+        <form enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <div class="section-title">
+                <h2>About</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4" data-aos="fade-right">
+                    {% if user.profile.profile_pic %}
+                    <img src="{{ user.profile.profile_pic.url }}" class="img-fluid"">
+                {{form.profile_pic}}
+              {% else %}
+              <img src=" {% static 'main/img/profile-img-default.jpg' %}">
+                    {% endif %}
+                </div>
+                <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                    <h3> {{ user.first_name }} {{ user.last_name }} </h3>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul>
+                                <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> {{form.birth_date}} </li>
+                                <li><i class="icofont-rounded-right"></i> <strong>Website:</strong> {{form.website}} </li>
+                                <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> {{form.phone}} </li>
+                                <li><i class="icofont-rounded-right"></i> <strong>City:</strong> {{form.location}} </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul>
+                                <li><i class="icofont-rounded-right"></i> <strong>Age:</strong> {{ form.age }} </li>
+                                <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong> {{ form.degree }} </li>
+                                <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong> {{ form.status }} </li>
+                                <li><i class="icofont-rounded-right"></i> <strong>E-MAIL change -> settings</strong> </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <hr />
+                    <h3>Biography</h3>
+                    <p>
+                        {{form.bio}}
+                    </p>
+                      <input class="btn btn-success" type="submit" value="submit">
+                </div>
+            </div>
+        </form>
+    </div>
+</section><!-- End About Section -->
+{% endif %}
+
+{% endblock %}

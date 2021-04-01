@@ -3,25 +3,33 @@
 {% block title %}
 Blog
 {% endblock %}
+{% block css %}
+<link href="{% static 'main/css/blog.css' %}" rel="stylesheet">
+{% endblock %}
 {% block content %}
 
 <!-- ======= Blog Section ======= -->
 <section id="services" class="services">
     <div class="container">
-        <h1>New post</h1>
+        <h1>New post | by {{ user.first_name }} {{ user.last_name }}</h1>
         <form method="post">
             {% csrf_token %}
             <div class="form-group">
-                <label for="exampleFormControlInput1">New Title</label>
                 {{ form.title }}
+                {{ form.author }}
+                {% if user.is_authenticated %}
+                {% endif %}
             </div>
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">New Text</label>
+                  {{ form.media }}
                  {{ form.full_text }}
             </div>
             <input class="btn btn-success" type="submit" value="Add">
         </form>
     </div>
 </section><!-- End Blog Section -->
-
+<script type="text/javascript">
+    var name= "{{ user.id }}"
+    document.getElementById("au").value = name
+</script>
 {% endblock %}
