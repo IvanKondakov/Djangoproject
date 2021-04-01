@@ -7,7 +7,7 @@ Hello everyone, this is my first Django project. Header "Version 0.1" just descr
 3. aft: register application
 > main app
 > 
-<img src="https://sun9-2.userapi.com/impg/kFCYYUb3ECAdBcHJ1-fX6o4KXTCZaMix9BYFrQ/yZD2Br2KJ_g.jpg?size=1202x556&quality=96&sign=3b1df733ce1836e0fd6c03ceca3e5112&type=album" width=25% height=25%> </img>
+<img src="https://sun9-2.userapi.com/impg/kFCYYUb3ECAdBcHJ1-fX6o4KXTCZaMix9BYFrQ/yZD2Br2KJ_g.jpg?size=1202x556&quality=96&sign=3b1df733ce1836e0fd6c03ceca3e5112&type=album" width=45% height=45%> </img>
 
 url's:
 ```python
@@ -21,7 +21,7 @@ url's:
 ```
 > blog app
 > 
-<img src="https://sun9-63.userapi.com/impg/oHksNnSsCDBr1v8fpdcmLGzWxk77b66nj-oQVQ/1M7UuGRbAZo.jpg?size=1356x532&quality=96&sign=efcc38e35e1eb002efc99f21a72ae8fa&type=album" width=25% height=25%> </img>
+<img src="https://sun9-63.userapi.com/impg/oHksNnSsCDBr1v8fpdcmLGzWxk77b66nj-oQVQ/1M7UuGRbAZo.jpg?size=1356x532&quality=96&sign=efcc38e35e1eb002efc99f21a72ae8fa&type=album" width=45% height=45%> </img>
 
 url's:
 ```python
@@ -97,7 +97,7 @@ def blog_create(request):
 ```
 > aft app
 > 
-<img src="https://sun9-47.userapi.com/impg/o7tVwD2ZIi1GPmlXdi7fjUxlqRg4p1nzab4-Sw/62WFpMpg2h0.jpg?size=554x605&quality=96&sign=d863569274a57c35ea97b74b1d46224b&type=album" width=25% height=25%> </img>
+<img src="https://sun9-47.userapi.com/impg/o7tVwD2ZIi1GPmlXdi7fjUxlqRg4p1nzab4-Sw/62WFpMpg2h0.jpg?size=554x605&quality=96&sign=d863569274a57c35ea97b74b1d46224b&type=album" width=35% height=35%> </img>
 
 url's:
 ```python
