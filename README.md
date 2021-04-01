@@ -6,6 +6,7 @@ Hello everyone, this is my first Django project.
 2. blog: work with blog posts
 3. aft: register application
 > main app
+> 
 url's:
 ```python
     path('', views.default, name= 'redirect'),
@@ -17,6 +18,7 @@ url's:
     path('portfolio/', views.portfolio, name='portfolio'),
 ```
 > blog app
+> 
 url's:
 ```python
     path('', login_required(views.BlogDetailView.as_view()), name='blog'),
@@ -90,6 +92,7 @@ def blog_create(request):
     return render(request, 'blog/create.html', data)
 ```
 > aft app
+> 
 urls:
 ```python
     path('', include('django.contrib.auth.urls'), name='home'),
