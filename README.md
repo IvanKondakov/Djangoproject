@@ -95,7 +95,8 @@ def blog_create(request):
 ```
 > aft app
 > 
-<img src="https://sun9-47.userapi.com/impg/o7tVwD2ZIi1GPmlXdi7fjUxlqRg4p1nzab4-Sw/62WFpMpg2h0.jpg?size=554x605&quality=96&sign=d863569274a57c35ea97b74b1d46224b&type=album" width=50% height=50%>
+<img src="https://sun9-47.userapi.com/impg/o7tVwD2ZIi1GPmlXdi7fjUxlqRg4p1nzab4-Sw/62WFpMpg2h0.jpg?size=554x605&quality=96&sign=d863569274a57c35ea97b74b1d46224b&type=album" width=50% height=50%> </img>
+
 url's:
 ```python
     path('', include('django.contrib.auth.urls'), name='home'),
