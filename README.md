@@ -1,13 +1,12 @@
 # Djangoproject
-Hello everyone, this is my first Django project. The heading "Version 0.1" briefly describes the applications. Further, the main changes will be written in new versions.
+Hello everyone, this is my first Django project. The heading "App's" briefly describes the applications. Further, the main changes will be written in new realeses.
 > ## Describe
 > 
 > The project conceptually looks like a social network, where you can register, create your profile, compose your resume and blog. 
 > Naturally, other users should have the functionality to view your blogs and profile with resume, comment and post likes.
 > 
 
-## Version 0.1
-### ***App's:***
+## App's
 1. main: url's and views for main pages
 2. blog: work with blog posts
 3. aft: register application
