@@ -1,5 +1,5 @@
 # Djangoproject
-Hello everyone, this is my first Django project.
+Hello everyone, this is my first Django project. Header "Version 0.1" just describes application's. Other version describe changes.
 ## Version 0.1
 ### ***App's:***
 1. main: url's and views for main pages
