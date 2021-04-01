@@ -1,7 +1,7 @@
 # Djangoproject
 Hello everyone, this is my first Django project.
 ## Version 0.1
-###***App's:***
+### ***App's:***
 1. main: url's and views for main pages
 2. blog: work with blog posts
 3. aft: register application
