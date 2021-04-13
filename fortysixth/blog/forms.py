@@ -5,7 +5,7 @@ from django.forms import ModelForm, TextInput, Textarea, Select
 class BlogForm(ModelForm):
     class Meta:
         model = Blog
-        fields = ['title', 'full_text', 'author', 'image']
+        fields = ['title', 'full_text', 'author', 'image', 'desc']
 
         widgets = {
             "title": TextInput(attrs={
@@ -22,5 +22,10 @@ class BlogForm(ModelForm):
                 'value': "",
                 'id': "au",
                 'type': "hidden"
-            })
+            }),
+            "desc": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Title',
+                'id': 'exampleFormControlInput1'
+            }),
         }

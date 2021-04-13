@@ -15,62 +15,81 @@ Blog
         <div class="section-title">
             <h2>Blog</h2>
             <a href="{% url 'create' %}"><button type="button" class="btn btn-info"><i class="bx bx-plus-medical"> </i> Add new post </button></a>
-            {% if blog %}
-            {% for el in blog %}
-            {% if user.is_authenticated %}
-            {% if user.id == el.author.id %}
-                <div class="card" style="margin-top: 10px">
-                <div class="card-header">
-                    <div class="row">
-                        <div class="col-lg">
-                            <h4><strong>{{ el.title }}</strong></h4>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-7" data-aos="fade-up">
+                {% if blog %}
+                {% for el in blog %}
+                {% if user.is_authenticated %}
+                {% if user.id == el.author.id %}
+                <div class="card md-12" style="max-width: 540px; margin-top:10px;">
+                    <div class="row g-0">
+                        <div class="col-md-4 fluid">
+                            {% if el.image %}
+                            <img class="img-fluid mx-auto d-block" src="{{ el.image.url }}">
+                            {% else %}
+                            <img class="img-fluid mx-auto d-block" src="{% static 'main/img/profile-img-default.jpg' %}">
+                            {% endif %}
                         </div>
-                        <a href="{% url 'blog_update' el.id %}"><i class="far fa-edit"></i></a>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <a href="{% url 'blog_detail' el.id %}">
+                                            <h5 class="card-title">{{ el.title }} </h5>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <a href="{% url 'blog_update' el.id %}"><i class="far fa-edit"></i></a>
+                                    </div>
+                                </div>
+                                <p class="card-text"> {{ el.desc }}</p>
+                            </div>
+                          </div>
                     </div>
-                </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <h6>
-                            <p>{{ el.full_text.html | safe }}</p>
-                        </h6>
-                        <footer class="blockquote-footer"><cite title="Source Title">
-                                <b> {{ el.author.first_name }} {{ el.author.last_name }} </b>| {{ el.created_at }}
-                            </cite></footer>
-                    </blockquote>
-                </div>
+                    <div class="card-footer text-muted text-center">
+                        <p class="card-text"><small class="text-muted;"><b> {{ el.author.first_name }} {{ el.author.last_name }} </b>| {{ el.created_at }}</small></p>
+                    </div>
                 </div>
                 {% endif %}
                 {% endif %}
                 {% endfor %}
                 {% else %}
-            <p> Nothing </p>
-            {% endif %}
+                <p> Nothing </p>
+                {% endif %}
+            </div>
+            <div class="vl col-lg-1"></div>
+            <div class="col-lg-4" data-aos="fade-up">
+                {% if blog %}
+                <h3 class="resume-title">Feed</h3>
+                {% for el in blog %}
+                {% if user.is_authenticated %}
+                {% if user.id != el.author.id %}
+                <div class="card-new md-4 text-left" style="width: 470px; margin-top:10px;">
+                    <div class="row g-0">
+                        <div class="col-md-5 fluid mx-auto" style="padding-left: 10px;">
+                            <div class="card-body">
+                                <a href="{% url 'blog_detail' el.id %}">
+                                    <h6 class="card-title">{{ el.title }} </h6>
+                                </a>
+                            </div>
+                        </div>
+                          <div class="vl fluid mx-auto" style="height:auto"></div>
+                      <div class="col-md-4 fluid mx-auto text-right">
+                            <p class="card-text" style="font-size: 14px"><small class="text-muted"> <a href="{% url 'about' el.author.id %}"><b> {{ el.author.first_name }} {{ el.author.last_name }} </b></a> | {{ el.created_at }}</small></p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+                {% else %}
+                <p> Nothing </p>
+                {% endif %}
+            </div>
         </div>
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    {% if page_obj.paginator.num_pages > 1 %}
-
-                    {% if page_obj.has_previous %}
-
-                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">previous</a> </li>
-
-                    {% endif %}
-
-                    <li class="page-item active"><a class="page-link" href="?page={{ page_obj.number }}"> {{ page_obj.number }}</a> </li>
-
-                    {% if page_obj.has_next %}
-
-                    <li class="page-item"><a class="page-link"> ... </a></li>
-
-                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}"> {{ page_obj.paginator.num_pages }} </a></li>
-                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a></li>
-
-                    {% endif %}
-
-                    {% endif %}
-                </ul>
-            </nav>
-        </div>
+    </div>
 </section><!-- End Blog Section -->
 
 {% endblock %}

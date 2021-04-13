@@ -15,11 +15,11 @@ About
 
         <div class="row">
             <div class="col-lg-4" data-aos="fade-right">
-              {% if page_user.profile_pic %}
-              <img src="{{ page_user.profile_pic.url }}" class="img-fluid"">
+                {% if page_user.profile_pic %}
+                <img src="{{ page_user.profile_pic.url }}" class="img-fluid"">
               {% else %}
-              <img src="{% static 'main/img/profile-img-default.jpg' %}">
-              {% endif %}
+              <img src=" {% static 'main/img/profile-img-default.jpg' %}">
+                {% endif %}
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
                 <h3> {{ page_user.user.first_name }} {{ page_user.user.last_name }} {% if user.id == page_user.user_id %} <a href="{% url 'about_edit' user.id %}"><i class='bx bxs-edit-alt'></i></a> {% endif %}</h3>
@@ -41,7 +41,7 @@ About
                         </ul>
                     </div>
                 </div>
-                <hr/>
+                <hr />
                 <p>
                     {{page_user.bio}}
                 </p>
@@ -49,6 +49,126 @@ About
         </div>
     </div>
 </section><!-- End About Section -->
+
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio section-bg">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Portfolio</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi
+                quidem hic quas.</p>
+        </div>
+
+        <div class="divider-1"> </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                <div class="portfolio-wrap">
+                    <img src="{% static 'main/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">
+                    <div class="portfolio-links">
+                        <a href="{% static 'main/img/portfolio/portfolio-2.jpg' %}" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/KLTUEBTWE9DD" title="link"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="margin-top: 30px">
+                <div class="portfolio-wrap">
+                    <img src="{% static 'main/img/portfolio/portfolio-1.png' %}" class="img-fluid" alt="">
+                    <div class="portfolio-links">
+                        <a href="portfolio-details.html" title="More Details"><i class="bx bx-plus"></i></a>
+                        <a href="https://github.com/IvanKondakov/myHealth" title="More Details"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                    <img src="{% static 'main/img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt="">
+                    <div class="portfolio-links">
+                        <a href="{% static 'main/img/portfolio/portfolio-3.jpg' %}" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a>
+                        <a href="https://www.coursera.org/account/accomplishments/certificate/SEH8SZLBCNCP" title="More Details"><i class="bx bx-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Portfolio Section -->
+<!-- ======= Resume Section ======= -->
+<section id="resume" class="resume">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Resume</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi
+                quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6" data-aos="fade-up">
+                <h3 class="resume-title">Sumary</h3>
+                <div class="resume-item pb-0">
+                    <h4>Junior-Developer</h4>
+                    <p><em>Created 4 web services on NodeJS using the ExpressJS framework, under the MySQL DBMS. When working with databases, the ORM technology Sequelize was used to interact with data, as with ordinary objects. The projects were
+                            based on Nginx, which stored static files, and NodeJS, in turn, worked with dynamic data. </em></p>
+                    <p><em>I am able to configure the Nginx configuration file, user management, configure SSH and FTP connections, install the necessary packages. </em></p>
+                    <p><em>Setting up sending a project from the development stage to staging and production. Debug and test the project after submitting them. Deploying projects via Docker (DevOps). </em></p>
+                    <ul>
+                        <li>Russia, Vladivostok</li>
+                        <li>+7 (962) 100-58-35</li>
+                        <li>vanykondakov@gmail.com</li>
+                    </ul>
+                </div>
+
+                <h3 class="resume-title">Education</h3>
+                <div class="resume-item">
+                    <h4>Software and administration of information systems</h4>
+                    <h5>2016 - 2020</h5>
+                    <p><em>Far Eastern Federal University</em></p>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="resume-title">Professional Experience</h3>
+                <div class="resume-item">
+                    <h4>Service engineer</h4>
+                    <h5>2021 - Present</h5>
+                    <p><em>Lab80 | Moscow, Russia </em></p>
+                    <ul>
+                        <li>Preparing a bot for trading on the exchange</li>
+                        <li>Track the status of bots</li>
+                        <li>I provide a quick response to errors that occur during sales / service work</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4>Teacher</h4>
+                    <h5>2020 - 2021</h5>
+                    <p><em>Rebotica | Moscow, Russia</em></p>
+                    <ul>
+                        <li>Systematized the educational process so that students of any age could learn the material.</li>
+                        <li>In the course of individual lessons, he taught the basics of programming to 10 school-age students.</li>
+                        <li>Some of the students developed and released games for Roblox in production.</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4>Web-Developer</h4>
+                    <h5>2019 - 2020</h5>
+                    <p><em>Drom, FEFU| Vladivostok, Russia</em></p>
+                    <ul>
+                        <li>
+                            Based on the results of a 4-month internship, an application "Auto Repair Assessment" was developed, which makes it possible to obtain an estimated damage estimate based on a photo of the damage received.</li>
+                        <li>A web application was created for monitoring the patient's condition and communicating in real time.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section><!-- End Resume Section -->
 
 <!-- ======= Facts Section ======= -->
 <section id="facts" class="facts" style="display:none">

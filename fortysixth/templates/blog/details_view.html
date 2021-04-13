@@ -3,7 +3,7 @@
 {% block title %}
 Blog
 {% endblock %}
-{% block active5 %} class="active" {% endblock %}
+{% block css %} <link href="{% static 'main/css/blog_detail.css' %}" rel="stylesheet"> {% endblock %}
 {% block content %}
 
 <!-- ======= Blog Section ======= -->
@@ -11,33 +11,34 @@ Blog
     <div class="container">
 
         <div class="section-title">
-            <h2>Blog</h2>
-            <ul>
-                {% for post in blog %}
-                <li>
-                    {{ post.title }}
-                </li>
-                {% endfor %}
-            </ul>
+            <h2>{{ blog.title }}</h2>
 
-            {% if page_obj.paginator.num_pages > 1 %}
-
-            {% if page_obj.has_previous %}
-
-            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% if user.is_authenticated %}
+            {{ blog.full_text.html | safe}}
 
             {% endif %}
 
-            <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
 
-            {% if page_obj.has_next %}
-
-            <a href="?page={{ page_obj.next_page_number }}">next</a>
-
-            {% endif %}
-
-            {% endif %}
         </div>
+        <div class="media block-update-card">
+      <a class="pull-left" href="{% url 'about' blog.author.id %}">
+        {% if blog.author.profile.profile_pic %}
+        <img class="media-object update-card-MDimentions" src="{{ blog.author.profile.profile_pic.url }}" alt="...">
+      {% else %}
+      <img class="media-object update-card-MDimentions"  src=" {% static 'main/img/profile-img-default.jpg' %}">
+        {% endif %}
+            </a>
+      <div class="media-body update-card-body">
+        <h4 class="media-heading" style="margin-left:10px;"> {{blog.author.first_name}} {{blog.author.last_name}}</h4>
+        <div class="btn-toolbar card-body-social" role="toolbar">
+          <div class="btn-group fa fa-github-alt git"></div>
+          <div class="btn-group linkedin fa fa-linkedin-square"></div>
+          <div class="btn-group twitter fa fa-twitter"></div>
+          <div class="btn-group facebook fa fa-facebook"></div>
+          <div class="btn-group google-plus fa fa-google-plus"></div>
+        </div>
+      </div>
+      </div>
     </div>
 </section><!-- End Blog Section -->
 {% endblock %}

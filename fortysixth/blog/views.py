@@ -3,7 +3,7 @@ from .models import Blog
 from django.contrib.auth.models import User
 from .forms import BlogForm
 from django.contrib import messages
-from django.views.generic import DetailView, UpdateView, DeleteView, ListView
+from django.views.generic import DetailView, UpdateView, DeleteView, ListView, CreateView
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
@@ -15,9 +15,13 @@ def blog(request):
 
 class BlogDetailView(ListView):
     model = Blog
-    paginate_by = 3
     ordering = ['-created_at']
     template_name = 'blog/blog.html'
+    context_object_name = 'blog'
+
+class DetailView(DetailView):
+    model = Blog
+    template_name = 'blog/details_view.html'
     context_object_name = 'blog'
 
 class BlogUpdateView(UpdateView):
@@ -28,25 +32,14 @@ class BlogUpdateView(UpdateView):
     form_class = BlogForm
     success_url = '/blog/'
 
+class BlogCreateView(CreateView):
+    model = Blog
+    queryset = Blog.objects.all()
+    template_name = 'blog/create.html'
+    context_object_name = 'blog'
+    form_class = BlogForm
+    success_url = '/blog/'
+
 class BlogDeleteView(DeleteView):
     model = Blog
     success_url = '/blog/'
-
-
-def blog_create(request):
-    if request.method == 'POST':
-        form = BlogForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('blog')
-        else:
-            messages.info(request, "Not correct")
-
-
-
-    form = BlogForm()
-
-    data = {
-        'form': form
-    }
-    return render(request, 'blog/create.html', data)

@@ -58,8 +58,6 @@
                 <ul>
                     <li {% block active1 %} {% endblock %}><a href="{% url 'home' %}"><i class="bx bx-home"></i> <span>Home</span></a></li>
                     <li {% block active2 %} {% endblock %}><a href="{% url 'about' user.id %}"><i class="bx bx-user"></i> <span>About</span></a></li>
-                    <li {% block active3 %} {% endblock %}><a href="{% url 'resume' %}"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-                    <li {% block active4 %} {% endblock %}><a href="{% url 'portfolio' %}"><i class="bx bx-book-content"></i> Portfolio</a></li>
                     <li {% block active5 %} {% endblock %}><a href="{% url 'blog' %}"><i class="bx bx-book"></i> Blog</a></li>
                 </ul>
             </nav><!-- .nav-menu -->
