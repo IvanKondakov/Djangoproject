@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
-
+import netifaces
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,8 +25,16 @@ SECRET_KEY = '6ygisj*(4*kzi40!m3lg=nibj7ru2tz^04=f7yj3qs1c++fk=i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+def ip_addresses():
+    ip_list = []
+    for interface in netifaces.interfaces():
+        addrs = netifaces.ifaddresses(interface)
+        for x in (netifaces.AF_INET, netifaces.AF_INET6):
+            if x in addrs:
+                ip_list.append(addrs[x][0]['addr'])
+    return ip_list
 
+ALLOWED_HOSTS = ip_addresses()
 
 # Application definition
 
@@ -41,7 +49,7 @@ INSTALLED_APPS = [
     'blog',
     'aft',
     'django_quill',
-    #'ckeditor',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
