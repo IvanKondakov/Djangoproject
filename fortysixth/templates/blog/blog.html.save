@@ -34,7 +34,7 @@ Blog
                             {% endif %}
                         </div>
                         <div class="col-md-8">
-                            <div class="card-body" style="padding-left: 10px;">
+                            <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-10">
                                         <a href="{% url 'blog_detail' el.id %}">
@@ -69,7 +69,7 @@ Blog
                 {% if user.id != el.author.id %}
                 <div class="card-new md-4 text-left" style="width: 470px; margin-top:10px;">
                     <div class="row g-0">
-                        <div class="col-md-5 fluid mx-auto" style="padding-left: 10px; padding-right:0px">
+                        <div class="col-md-5 fluid mx-auto" style="padding-left: 10px;">
                             <div class="card-body">
                                 <a href="{% url 'blog_detail' el.id %}">
                                     <h6 class="card-title">{{ el.title }} </h6>

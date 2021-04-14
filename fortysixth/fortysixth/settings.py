@@ -26,7 +26,7 @@ SECRET_KEY = '6ygisj*(4*kzi40!m3lg=nibj7ru2tz^04=f7yj3qs1c++fk=i'
 DEBUG = True
 
 def ip_addresses():
-    ip_list = []
+    ip_list = ['djblog.me']
     for interface in netifaces.interfaces():
         addrs = netifaces.ifaddresses(interface)
         for x in (netifaces.AF_INET, netifaces.AF_INET6):
