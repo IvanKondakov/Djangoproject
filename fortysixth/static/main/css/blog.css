@@ -24,6 +24,11 @@ padding-right: 0px;
 padding-left: 0px;
 }
 
+.col-lg-4{
+padding-right: 0px;
+padding-left: 0px;
+}
+
 .col-md-8{
 padding-right: 0px;
 padding-left: 0px;
@@ -100,5 +105,3 @@ padding-top: 1.25rem;
 .blockquote-footer {
 text-shadow: 0 2px 5px rgba(33, 33, 33, 0.5);
 }
-
-
