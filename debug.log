@@ -1,0 +1,9 @@
+2021-04-16 07:11:23,707 asyncio      DEBUG    Using selector: EpollSelector
+2021-04-16 07:11:24,155 asyncio      DEBUG    Using selector: EpollSelector
+2021-04-16 07:11:24,284 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-04-16 07:13:21,052 django.utils.autoreload INFO     /home/fortysixth/development/Djangoproject/fortysixth/aft/views.py changed, reloading.
+2021-04-16 07:13:21,535 asyncio      DEBUG    Using selector: EpollSelector
+2021-04-16 07:13:21,694 django.utils.autoreload INFO     Watching for file changes with StatReloader
+2021-04-16 07:13:44,104 django.utils.autoreload INFO     /home/fortysixth/development/Djangoproject/fortysixth/aft/views.py changed, reloading.
+2021-04-16 07:13:44,533 asyncio      DEBUG    Using selector: EpollSelector
+2021-04-16 07:13:44,683 django.utils.autoreload INFO     Watching for file changes with StatReloader
