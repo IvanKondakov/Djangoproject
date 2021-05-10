@@ -8,7 +8,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from django.contrib.auth.models import User
 from .tokens import account_activation_token
-#import logging
+from loguru import logger
 
 def sign_up(request):
     if request.method == 'POST':
@@ -30,7 +30,8 @@ def sign_up(request):
                 'token': account_activation_token.make_token(user),
             })
             user.email_user(subject, message)
-            #logging.info("%s / %s" % (subject, message))
+            logger.add("debug.log", format="{time} {level} {message}", level="DEBUG", rotation="10:00", compression="zip")
+            logger.info(message)
             return redirect('account_activation_sent')
     else:
         form = UserForm()
