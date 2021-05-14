@@ -434,3 +434,273 @@
 2021-05-10 05:04:59,250 django.request WARNING  Not Found: /.env
 2021-05-10 05:04:59,960 django.request WARNING  Not Found: /wp-content/
 2021-05-10 05:19:37,254 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-10 08:06:47,938 root         INFO     Activate Your MySite Account / 
+Hi Test,
+
+Please click on the link below to confirm your registration:
+
+http://djblog.me/aft/activate/OQ/amfajb-95b984b214e85c2c34a7850ea5334fe0/
+
+
+2021-05-10 08:09:20,520 root         INFO     Activate Your MySite Account / 
+Hi Teste,
+
+Please click on the link below to confirm your registration:
+
+http://djblog.me/aft/activate/MTA/amfank-ea10510074369339c3e3001222366217/
+
+
+2021-05-10 08:15:37,874 django.request WARNING  Not Found: /aft/activate/MTA/amfank-ea10510074369339c3e3001222366217/\
+2021-05-10 08:18:01,731 django.request WARNING  Not Found: /favicon.ico
+2021-05-10 09:48:53,823 django.request WARNING  Not Found: /robots.txt
+2021-05-10 09:51:51,627 django.request WARNING  Not Found: /.env
+2021-05-10 09:51:52,375 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-10 10:03:02,176 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-10 10:03:02,206 django.request WARNING  Bad Request: /
+2021-05-10 10:06:56,119 django.request WARNING  Not Found: /.env
+2021-05-10 10:06:56,508 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-10 10:20:31,250 django.request WARNING  Not Found: /favicon.ico
+2021-05-10 10:27:19,259 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-10 10:31:46,168 PIL.Image    DEBUG    Importing BlpImagePlugin
+2021-05-10 10:31:46,170 PIL.Image    DEBUG    Importing BmpImagePlugin
+2021-05-10 10:31:46,170 PIL.Image    DEBUG    Importing BufrStubImagePlugin
+2021-05-10 10:31:46,171 PIL.Image    DEBUG    Importing CurImagePlugin
+2021-05-10 10:31:46,171 PIL.Image    DEBUG    Importing DcxImagePlugin
+2021-05-10 10:31:46,172 PIL.Image    DEBUG    Importing DdsImagePlugin
+2021-05-10 10:31:46,173 PIL.Image    DEBUG    Importing EpsImagePlugin
+2021-05-10 10:31:46,174 PIL.Image    DEBUG    Importing FitsStubImagePlugin
+2021-05-10 10:31:46,175 PIL.Image    DEBUG    Importing FliImagePlugin
+2021-05-10 10:31:46,176 PIL.Image    DEBUG    Importing FpxImagePlugin
+2021-05-10 10:31:46,176 PIL.Image    DEBUG    Image: failed to import FpxImagePlugin: No module named 'olefile'
+2021-05-10 10:31:46,177 PIL.Image    DEBUG    Importing FtexImagePlugin
+2021-05-10 10:31:46,177 PIL.Image    DEBUG    Importing GbrImagePlugin
+2021-05-10 10:31:46,178 PIL.Image    DEBUG    Importing GifImagePlugin
+2021-05-10 10:31:46,178 PIL.Image    DEBUG    Importing GribStubImagePlugin
+2021-05-10 10:31:46,179 PIL.Image    DEBUG    Importing Hdf5StubImagePlugin
+2021-05-10 10:31:46,180 PIL.Image    DEBUG    Importing IcnsImagePlugin
+2021-05-10 10:31:46,181 PIL.Image    DEBUG    Importing IcoImagePlugin
+2021-05-10 10:31:46,182 PIL.Image    DEBUG    Importing ImImagePlugin
+2021-05-10 10:31:46,183 PIL.Image    DEBUG    Importing ImtImagePlugin
+2021-05-10 10:31:46,184 PIL.Image    DEBUG    Importing IptcImagePlugin
+2021-05-10 10:31:46,185 PIL.Image    DEBUG    Importing JpegImagePlugin
+2021-05-10 10:31:46,185 PIL.Image    DEBUG    Importing Jpeg2KImagePlugin
+2021-05-10 10:31:46,185 PIL.Image    DEBUG    Importing McIdasImagePlugin
+2021-05-10 10:31:46,186 PIL.Image    DEBUG    Importing MicImagePlugin
+2021-05-10 10:31:46,187 PIL.Image    DEBUG    Image: failed to import MicImagePlugin: No module named 'olefile'
+2021-05-10 10:31:46,187 PIL.Image    DEBUG    Importing MpegImagePlugin
+2021-05-10 10:31:46,188 PIL.Image    DEBUG    Importing MpoImagePlugin
+2021-05-10 10:31:46,188 PIL.Image    DEBUG    Importing MspImagePlugin
+2021-05-10 10:31:46,189 PIL.Image    DEBUG    Importing PalmImagePlugin
+2021-05-10 10:31:46,190 PIL.Image    DEBUG    Importing PcdImagePlugin
+2021-05-10 10:31:46,191 PIL.Image    DEBUG    Importing PcxImagePlugin
+2021-05-10 10:31:46,191 PIL.Image    DEBUG    Importing PdfImagePlugin
+2021-05-10 10:31:46,198 PIL.Image    DEBUG    Importing PixarImagePlugin
+2021-05-10 10:31:46,199 PIL.Image    DEBUG    Importing PngImagePlugin
+2021-05-10 10:31:46,199 PIL.Image    DEBUG    Importing PpmImagePlugin
+2021-05-10 10:31:46,200 PIL.Image    DEBUG    Importing PsdImagePlugin
+2021-05-10 10:31:46,200 PIL.Image    DEBUG    Importing SgiImagePlugin
+2021-05-10 10:31:46,201 PIL.Image    DEBUG    Importing SpiderImagePlugin
+2021-05-10 10:31:46,202 PIL.Image    DEBUG    Importing SunImagePlugin
+2021-05-10 10:31:46,202 PIL.Image    DEBUG    Importing TgaImagePlugin
+2021-05-10 10:31:46,203 PIL.Image    DEBUG    Importing TiffImagePlugin
+2021-05-10 10:31:46,204 PIL.Image    DEBUG    Importing WebPImagePlugin
+2021-05-10 10:31:46,208 PIL.Image    DEBUG    Importing WmfImagePlugin
+2021-05-10 10:31:46,209 PIL.Image    DEBUG    Importing XbmImagePlugin
+2021-05-10 10:31:46,210 PIL.Image    DEBUG    Importing XpmImagePlugin
+2021-05-10 10:31:46,211 PIL.Image    DEBUG    Importing XVThumbImagePlugin
+2021-05-10 10:37:18,875 django.request WARNING  Not Found: /.env
+2021-05-10 10:54:27,759 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-10 11:25:02,352 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-10 11:51:47,960 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: 'dp3.qq.com'. You may need to add 'dp3.qq.com' to ALLOWED_HOSTS.
+2021-05-10 11:51:48,014 django.request WARNING  Bad Request: /dynamic
+2021-05-10 11:55:35,287 django.request WARNING  Not Found: /.env
+2021-05-10 13:13:00,538 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-10 13:20:58,705 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-10 13:46:48,133 django.request WARNING  Not Found: /.env
+2021-05-10 13:46:48,691 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-10 15:06:06,160 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-10 15:45:04,053 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-10 15:45:04,073 django.request WARNING  Bad Request: /boaform/admin/formLogin
+2021-05-10 15:46:31,824 django.request WARNING  Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+2021-05-10 15:46:31,912 django.request WARNING  Not Found: /solr/admin/info/system
+2021-05-10 15:46:32,681 django.request WARNING  Not Found: /api/jsonws/invoke
+2021-05-10 15:46:33,275 django.request WARNING  Not Found: /Autodiscover/Autodiscover.xml
+2021-05-10 15:46:33,367 django.request WARNING  Not Found: /_ignition/execute-solution
+2021-05-10 16:00:07,006 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-10 16:18:32,531 django.request WARNING  Not Found: /.env
+2021-05-10 16:51:38,334 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-10 16:51:38,353 django.request WARNING  Bad Request: /
+2021-05-10 18:09:16,998 django.request WARNING  Not Found: /.env
+2021-05-10 18:51:17,465 django.request WARNING  Not Found: /nmaplowercheck1620661877
+2021-05-10 18:51:17,780 django.request WARNING  Not Found: /HNAP1
+2021-05-10 18:51:19,379 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-10 18:51:19,398 django.request WARNING  Bad Request: /
+2021-05-10 21:03:07,599 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-10 21:03:32,280 django.request WARNING  Not Found: /.env
+2021-05-10 21:03:32,830 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-11 01:04:25,700 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-11 01:04:25,720 django.request WARNING  Bad Request: /
+2021-05-11 01:27:20,468 django.request WARNING  Not Found: /.env
+2021-05-11 01:30:16,922 django.request WARNING  Not Found: /reboot/
+2021-05-11 01:30:17,002 django.request WARNING  Not Found: /firmware/
+2021-05-11 01:30:17,036 django.request WARNING  Not Found: /Line/
+2021-05-11 01:30:17,115 django.request WARNING  Not Found: /Telephone/
+2021-05-11 01:30:17,149 django.request WARNING  Not Found: /aastra/
+2021-05-11 01:30:17,218 django.request WARNING  Not Found: /wkn/
+2021-05-11 01:30:17,252 django.request WARNING  Not Found: /algo/
+2021-05-11 01:30:17,329 django.request WARNING  Not Found: /asterisk.conf/
+2021-05-11 01:30:17,364 django.request WARNING  Not Found: /asterisk/
+2021-05-11 01:30:17,431 django.request WARNING  Not Found: /atacom/
+2021-05-11 01:30:17,465 django.request WARNING  Not Found: /backups/
+2021-05-11 01:30:17,533 django.request WARNING  Not Found: /cisco/
+2021-05-11 01:30:17,577 django.request WARNING  Not Found: /conf.cfg/
+2021-05-11 01:30:17,646 django.request WARNING  Not Found: /config.txt/
+2021-05-11 01:30:17,680 django.request WARNING  Not Found: /digium/
+2021-05-11 01:30:17,749 django.request WARNING  Not Found: /etc/asterisk/sip.conf/
+2021-05-11 01:30:17,788 django.request WARNING  Not Found: /extensions.conf/
+2021-05-11 01:30:17,859 django.request WARNING  Not Found: /goautodial/
+2021-05-11 01:30:17,893 django.request WARNING  Not Found: /grandstream/
+2021-05-11 01:30:17,960 django.request WARNING  Not Found: /linksys/
+2021-05-11 01:30:17,994 django.request WARNING  Not Found: /mitel/
+2021-05-11 01:30:18,064 django.request WARNING  Not Found: /phone.cfg/
+2021-05-11 01:30:18,099 django.request WARNING  Not Found: /phone/
+2021-05-11 01:30:18,167 django.request WARNING  Not Found: /polycom/
+2021-05-11 01:30:18,206 django.request WARNING  Not Found: /prov/
+2021-05-11 01:30:18,273 django.request WARNING  Not Found: /provisioning/
+2021-05-11 01:30:18,307 django.request WARNING  Not Found: /sangoma/
+2021-05-11 01:30:18,376 django.request WARNING  Not Found: /sip.conf/
+2021-05-11 01:30:18,410 django.request WARNING  Not Found: /sip.txt/
+2021-05-11 01:30:18,479 django.request WARNING  Not Found: /sipconf/
+2021-05-11 01:30:18,512 django.request WARNING  Not Found: /sipura/
+2021-05-11 01:30:18,580 django.request WARNING  Not Found: /spa/
+2021-05-11 01:30:18,614 django.request WARNING  Not Found: /spectralink/
+2021-05-11 01:30:18,684 django.request WARNING  Not Found: /tftpboot/
+2021-05-11 01:30:18,719 django.request WARNING  Not Found: /tftpphone/
+2021-05-11 01:30:18,791 django.request WARNING  Not Found: /tiger/
+2021-05-11 01:30:18,827 django.request WARNING  Not Found: /txt/
+2021-05-11 01:30:18,861 django.request WARNING  Not Found: /voip/
+2021-05-11 01:30:18,929 django.request WARNING  Not Found: /vtech/
+2021-05-11 01:30:18,963 django.request WARNING  Not Found: /yealink/
+2021-05-11 01:30:19,030 django.request WARNING  Not Found: /sitemap.sip/
+2021-05-11 01:30:19,064 django.request WARNING  Not Found: /sitemap/asterisk/
+2021-05-11 03:03:41,081 django.request WARNING  Not Found: /robots.txt
+2021-05-11 07:09:16,288 django.request WARNING  Not Found: /.env
+2021-05-11 07:42:47,372 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-11 08:47:56,847 django.request WARNING  Not Found: /boaform/admin/formLogin
+2021-05-11 09:48:24,281 django.request WARNING  Not Found: /.env
+2021-05-11 10:58:20,600 django.request WARNING  Not Found: /api/jsonws/invoke
+2021-05-11 10:58:20,603 django.request WARNING  Not Found: /solr/admin/info/system
+2021-05-11 10:58:20,690 django.request WARNING  Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+2021-05-11 10:58:20,770 django.request WARNING  Not Found: /index.php
+2021-05-11 10:58:21,186 django.request WARNING  Not Found: /console/
+2021-05-11 10:58:21,237 django.request WARNING  Not Found: /wp-content/plugins/wp-file-manager/readme.txt
+2021-05-11 10:58:21,337 django.request WARNING  Not Found: /Autodiscover/Autodiscover.xml
+2021-05-11 12:13:20,053 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-11 12:13:20,074 django.request WARNING  Bad Request: /0bef
+2021-05-11 16:48:57,507 django.request WARNING  Not Found: /robots.txt
+2021-05-11 16:48:57,814 django.request WARNING  Not Found: /sitemap.xml
+2021-05-11 20:04:23,481 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-11 20:04:23,502 django.request WARNING  Bad Request: /
+2021-05-11 20:55:35,567 django.request WARNING  Not Found: /shell
+2021-05-11 22:05:43,270 django.request WARNING  Not Found: /TP/index.php
+2021-05-11 22:05:43,727 django.request WARNING  Not Found: /thinkphp/html/public/index.php
+2021-05-11 22:05:44,645 django.request WARNING  Not Found: /public/index.php
+2021-05-11 22:05:45,108 django.request WARNING  Not Found: /TP/html/public/index.php
+2021-05-11 23:16:24,923 django.request WARNING  Not Found: /.env
+2021-05-11 23:36:31,841 django.request WARNING  Not Found: /.env
+2021-05-12 01:11:57,018 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-12 01:40:09,162 django.request WARNING  Not Found: /robots.txt
+2021-05-12 01:40:09,589 django.request WARNING  Not Found: /sitemap.xml
+2021-05-12 02:29:25,236 django.request WARNING  Not Found: /favicon.ico
+2021-05-12 02:57:21,848 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-12 02:57:21,867 django.request WARNING  Bad Request: /
+2021-05-12 02:59:44,083 django.request WARNING  Not Found: /_ignition/execute-solution
+2021-05-12 03:46:28,874 django.request WARNING  Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+2021-05-12 03:46:28,879 django.request WARNING  Not Found: /api/jsonws/invoke
+2021-05-12 03:46:28,963 django.request WARNING  Not Found: /solr/admin/info/system
+2021-05-12 03:46:29,045 django.request WARNING  Not Found: /index.php
+2021-05-12 03:46:29,125 django.request WARNING  Not Found: /wp-content/plugins/wp-file-manager/readme.txt
+2021-05-12 03:46:29,209 django.request WARNING  Not Found: /Autodiscover/Autodiscover.xml
+2021-05-12 03:46:29,218 django.request WARNING  Not Found: /console/
+2021-05-12 03:46:29,291 django.request WARNING  Not Found: /_ignition/execute-solution
+2021-05-12 04:48:33,402 django.request WARNING  Not Found: /config/getuser
+2021-05-12 08:40:27,341 django.request WARNING  Not Found: /shell
+2021-05-12 11:34:42,580 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-12 11:34:42,601 django.request WARNING  Bad Request: /cgi-bin/kerbynet
+2021-05-12 11:51:51,794 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-12 11:51:51,817 django.request WARNING  Bad Request: /cgi-bin/kerbynet
+2021-05-12 11:51:52,596 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-12 11:51:52,615 django.request WARNING  Bad Request: /cgi-bin/kerbynet
+2021-05-12 12:12:39,635 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-12 12:12:39,658 django.request WARNING  Bad Request: /cgi-bin/kerbynet
+2021-05-12 12:13:49,614 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-12 12:13:49,635 django.request WARNING  Bad Request: /cgi-bin/kerbynet
+2021-05-12 12:26:28,851 django.request WARNING  Not Found: /actuator/health
+2021-05-12 12:45:06,738 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-12 12:45:06,758 django.request WARNING  Bad Request: /cgi-bin/kerbynet
+2021-05-12 13:09:44,776 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-12 13:09:44,796 django.request WARNING  Bad Request: /cgi-bin/kerbynet
+2021-05-12 13:38:52,618 django.request WARNING  Not Found: /hudson
+2021-05-12 13:45:13,612 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-12 13:45:13,632 django.request WARNING  Bad Request: /cgi-bin/kerbynet
+2021-05-12 19:23:05,351 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '110.242.68.4'. You may need to add '110.242.68.4' to ALLOWED_HOSTS.
+2021-05-12 19:23:05,372 django.request WARNING  Bad Request: /
+2021-05-12 20:49:50,735 django.request WARNING  Not Found: /TP/public/index.php
+2021-05-12 20:49:50,947 django.request WARNING  Not Found: /TP/index.php
+2021-05-12 20:49:51,359 django.request WARNING  Not Found: /html/public/index.php
+2021-05-12 20:49:51,558 django.request WARNING  Not Found: /public/index.php
+2021-05-12 20:49:51,757 django.request WARNING  Not Found: /TP/html/public/index.php
+2021-05-12 20:49:51,950 django.request WARNING  Not Found: /elrekt.php
+2021-05-13 00:47:01,499 django.request WARNING  Not Found: /vicidial/admin.php
+2021-05-13 01:22:41,671 django.request WARNING  Not Found: /robots.txt
+2021-05-13 03:40:55,463 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-13 03:44:41,034 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-13 03:44:41,054 django.request WARNING  Bad Request: /0bef
+2021-05-13 04:20:30,470 django.request WARNING  Not Found: /HNAP1/
+2021-05-13 04:36:44,157 django.request WARNING  Not Found: /.env
+2021-05-13 06:24:38,553 django.request WARNING  Not Found: /boaform/admin/formLogin
+2021-05-13 06:47:31,090 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-13 06:47:31,109 django.request WARNING  Bad Request: /
+2021-05-13 06:51:53,806 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-13 06:51:53,826 django.request WARNING  Bad Request: /setup.cgi
+2021-05-13 07:26:54,909 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-13 07:26:54,935 django.request WARNING  Bad Request: /setup.cgi
+2021-05-13 08:26:08,244 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-13 08:26:08,274 django.request WARNING  Bad Request: /setup.cgi
+2021-05-13 08:33:22,314 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-13 09:51:05,637 django.request WARNING  Not Found: /GponForm/diag_Form
+2021-05-13 10:50:44,003 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /
+2021-05-13 12:30:12,719 django.request WARNING  Not Found: /.git/config
+2021-05-13 12:30:13,462 django.request WARNING  Not Found: /config.json
+2021-05-13 12:30:13,819 django.request WARNING  Not Found: /v2/_catalog
+2021-05-13 12:30:15,772 django.request WARNING  Not Found: /api/search
+2021-05-13 12:30:16,507 django.request WARNING  Not Found: /info.php
+2021-05-13 12:30:16,569 django.request WARNING  Not Found: /server-status
+2021-05-13 13:24:09,236 django.request WARNING  Not Found: /config/getuser
+2021-05-13 16:41:17,391 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-13 16:41:17,410 django.request WARNING  Bad Request: /
+2021-05-13 16:58:31,453 django.security.DisallowedHost ERROR    Invalid HTTP_HOST header: '_'. The domain name provided is not valid according to RFC 1034/1035.
+2021-05-13 16:58:31,477 django.request WARNING  Bad Request: /0bef
+2021-05-13 17:23:47,216 django.request WARNING  Not Found: /HNAP1/
+2021-05-13 18:11:14,897 django.request WARNING  Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+2021-05-13 18:11:14,904 django.request WARNING  Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+2021-05-13 18:11:14,988 django.request WARNING  Not Found: /solr/admin/info/system
+2021-05-13 18:11:15,067 django.request WARNING  Not Found: /index.php
+2021-05-13 18:11:15,219 django.request WARNING  Not Found: /console/
+2021-05-13 18:11:15,226 django.request WARNING  Not Found: /Autodiscover/Autodiscover.xml
+2021-05-13 19:23:36,364 django.request WARNING  Not Found: /GponForm/diag_Form
+2021-05-13 19:43:43,391 django.request WARNING  Not Found: /cgi-bin/printbook
+2021-05-13 19:43:43,711 django.request WARNING  Not Found: /nrdh.php
+2021-05-13 19:43:44,344 django.request WARNING  Not Found: /include/makecvs.php
+2021-05-13 19:43:45,127 django.request WARNING  Not Found: /zend3/public/
+2021-05-13 21:08:33,448 django.request WARNING  Not Found: /system_api.php
+2021-05-13 21:08:33,647 django.request WARNING  Not Found: /system_api.php
+2021-05-13 21:08:34,063 django.request WARNING  Not Found: /streaming/clients_live.php
+2021-05-13 21:08:34,480 django.request WARNING  Not Found: /client_area/
+2021-05-13 21:08:34,685 django.request WARNING  Not Found: /stalker_portal/c/
+2021-05-13 22:24:28,353 django.request WARNING  Not Found: /_ignition/execute-solution
+2021-05-13 22:24:30,561 django.request WARNING  Not Found: /jenkins/login
+2021-05-13 22:24:31,067 django.request WARNING  Not Found: /manager/html
+2021-05-14 01:45:51,833 django.request WARNING  Not Found: /.env
+2021-05-14 05:21:10,210 django.request WARNING  Not Found: /.env
+2021-05-14 05:21:10,594 django.security.csrf WARNING  Forbidden (CSRF cookie not set.): /

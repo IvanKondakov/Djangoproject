@@ -1,0 +1,107 @@
+.img-blog {
+width: 150px;
+height: auto;
+position: absolute;
+display: block;
+top: 50%;
+transform: translate(0, -50%);
+margin-left: auto;
+margin-right: auto;
+}
+
+.row{
+margin-right: 0px;
+margin-left: 0px;
+}
+
+.col-md-4{
+padding-right: 0px;
+padding-left: 0px;
+}
+
+.col-lg-7{
+padding-right: 0px;
+padding-left: 0px;
+}
+
+.col-lg-4{
+padding-right: 0px;
+padding-left: 0px;
+}
+
+.col-md-8{
+padding-right: 0px;
+padding-left: 0px;
+}
+
+.col-md-10{
+padding-right: 0px;
+padding-left: 0px;
+}
+
+.col-md-2{
+padding-right: 0px;
+padding-left: 0px;
+}
+
+a {
+  color: #000000;
+}
+a:hover {
+ color: #149ddd; /* Цвет ссылки */
+}
+
+.vl {
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+  height: auto;
+}
+
+hr {
+  margin-top: 5px;
+  border: 0;
+  background: #149ddd;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.vLargeTextField{
+  height: 500px;
+  padding-bottom: 30px;
+}
+
+h1{
+  font-size: 24px;
+}
+
+.card {
+      position: relative;
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 2px;
+      color: rgba(0, 0, 0, 0.87);
+      background: #fff;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.card-new {
+      position: relative;
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 1px;
+      color: rgba(0, 0, 0, 0.87);
+      background: #fff;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 0px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.card-body {
+background: #fff;
+padding: 0rem;
+padding-top: 1.25rem;
+}
+
+.card-header {
+ background: #fff;
+}
+
+.blockquote-footer {
+text-shadow: 0 2px 5px rgba(33, 33, 33, 0.5);
+}
