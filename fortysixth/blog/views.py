@@ -7,6 +7,7 @@ from django.views.generic import DetailView, UpdateView, DeleteView, ListView, C
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
+from loguru import logger
 
 @login_required
 def blog(request):

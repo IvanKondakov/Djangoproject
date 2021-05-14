@@ -9,6 +9,7 @@ from django.template.loader import render_to_string
 from django.contrib.auth.models import User
 from .tokens import account_activation_token
 from loguru import logger
+from bot_log import tel_bot_logs
 
 def sign_up(request):
     if request.method == 'POST':
@@ -30,8 +31,9 @@ def sign_up(request):
                 'token': account_activation_token.make_token(user),
             })
             user.email_user(subject, message)
-            logger.add("debug.log", format="{time} {level} {message}", level="DEBUG", rotation="10:00", compression="zip")
+            logger.add("debug.log", format="{time} {level} {message}", level="DEBUG", rotation="10:00")
             logger.info(message)
+            tel_bot_logs(message)
             return redirect('account_activation_sent')
     else:
         form = UserForm()
