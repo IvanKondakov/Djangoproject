@@ -3,7 +3,7 @@ import requests
 import sys
 
 def tel_bot():
-    bot_api_key = "1802025375:AAH1e82nx7Elurv8XyExvF2YyngWPw9iKMs"
+    bot_api_key = "1802025375:AAHeXYACoOhregUc9q3NrdgYzxOVrigIkcE"
     channel_name = "@FortysixthBotDjango"
     message = sys.argv[1]
 
@@ -12,8 +12,10 @@ def tel_bot():
     params = {
         'chat_id': channel_name,
         'text': message,
+        'disable_web_page_preview': True,
+        'parse_mode': "markdown",
     }
 
-    return requests.get(url, params=params).json()
+    return requests.post(url, params=params).json()
 
 tel_bot()

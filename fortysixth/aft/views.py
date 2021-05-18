@@ -9,7 +9,7 @@ from django.template.loader import render_to_string
 from django.contrib.auth.models import User
 from .tokens import account_activation_token
 from loguru import logger
-from bot_log import tel_bot_logs
+from .bot_log import tel_bot_logs
 
 def sign_up(request):
     if request.method == 'POST':
