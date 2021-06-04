@@ -18,12 +18,14 @@ def sign_up(request):
         profileform = ProfileForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
+            logger.info(user)
             user.is_active = False
             user.save()
             profileform = form.save(commit=False)
             profileform.is_active = False
             profileform.save()
             current_site = get_current_site(request)
+            logger.info(current_site)
             subject = 'Activate Your MySite Account'
             message = render_to_string('registration/account_activation_email.html', {
                 'user': user,
@@ -63,7 +65,14 @@ def activate(request, uidb64, token):
         return render(request, 'registration/account_activation_invalid.html')
 
 def complete(request):
-    id = request.GET.get("id", "")
     username = request.GET.get("username", "")
-    output = "<h2>User</h2><h3>id: {0}  name: {1}</h3>".format(id, username)
-    return HttpResponse(output)
+    user = username
+    logger.info(user)
+    user.is_active = True
+    user.save()
+
+    profileform = username
+    profileform.is_active = True
+    profileform.save()
+
+    return redirect('blog')
