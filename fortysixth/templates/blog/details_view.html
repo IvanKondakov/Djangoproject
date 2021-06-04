@@ -5,14 +5,13 @@ Blog
 {% endblock %}
 {% block active2 %} class="colorlib-active" {% endblock %}
 {% block content %}
-
+{% if user.is_authenticated %}
 <div id="colorlib-main">
     <section class="ftco-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 ftco-animate">
                     <h2 class="mb-3 font-weight-bold"> {{ blog.title }} </h2>
-                    {% if user.is_authenticated %}
                     {% if blog.image %}
                     <p>
                         <img src="{{ blog.image.url }}" alt="" class="img-fluid" style="max-width: 60%;">
@@ -23,28 +22,61 @@ Blog
                     </p>
                     {% endif %}
                     <p>{{ blog.full_text.html | safe}}</p>
-                    {% endif %}
+
                     <div class="tag-widget post-tag-container mb-5 mt-5">
-                            <div class="tagcloud col-lg-6">
+                        <div class="row">
+                            <div class="col lg-4">
                                 <form class="" action="{% url 'like_post' blog.pk %}" method="post">
                                     {% csrf_token %}
-                                 <button type="submit" name="blog_id" class="btn btn-warning"  value="{{ blog.id }}">Likes | {{ total_lkes }}</button> <br/> <br/>
+
+                                    {% if  liked %}
+                                    <button type="submit" name="blog_id" class="btn btn-danger" value="{{ blog.id }}">Unlike | {{ total_lkes }}</button> <br /> <br />
+                                    {% else %}
+                                    <button type="submit" name="blog_id" class="btn btn-warning" value="{{ blog.id }}">Likes | {{ total_lkes }}</button> <br /> <br />
+                                    {% endif %}
                                 </form>
-                                <a href="#" class="tag-cloud-link"> Follow {{ blog.author.first_name }} </a>
-                                <a href="#" class="tag-cloud-link"> Follow {{ blog.category }} </a>
                             </div>
+                            <div class="col lg-4">
+                                <form class="" action="{% url 'follow_unfollow_profile' %}" method="post">
+                                    {% csrf_token %}
+                                    {% if  follow  %}
+                                    <button type="submit" class="btn btn-secondary" name="profile_pk" value="{{ blog.author.id }}"> Unfollow {{ blog.author.first_name }} </button>
+                                    {% else %}
+                                    <button type="submit" class="btn btn-dark" name="profile_pk" value="{{ blog.author.id }}"> Follow {{ blog.author.first_name }} </button>
+                                    {% endif %}
+                                </form>
+                            </div>
+                            <div class="col lg-4">
+                                 <form class="" action="{% url 'follow_unfollow_category' %}" method="post">
+                                    {% csrf_token %}
+                                    {% if  follow_category  %}
+                                    <button type="submit" class="btn btn-success" name="category_str" value="{{ blog.category }}"> Unfollow {{ blog.category }} </button>
+                                    {% else %}
+                                    <button type="submit" class="btn btn-light" name="category_str" value="{{ blog.category }}"> Follow {{ blog.category }} </button>
+                                    {% endif %}
+                                </form>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="about-author d-flex p-4 bg-light">
                         <div class="bio mr-5">
                             {% if blog.author.profile.profile_pic %}
-                        <a href="{% url 'about' blog.author.id %}">  <img src="{{ blog.author.profile.profile_pic.url }}" alt="Image placeholder" class="img-fluid mb-4"> </a>
+                            <a href="{% url 'about' blog.author.id %}"> <img src="{{ blog.author.profile.profile_pic.url }}" alt="Image placeholder" class="img-fluid mb-4"> </a>
+                            {% elif el.author.profile.tg_pic %}
+                            <a href="{% url 'about' blog.author.id %}"> <img src="{{ blog.author.profile.tg_pic}}" alt="Image placeholder" class="img-fluid mb-4"> </a>
                             {% else %}
                             <img src="{% static 'main/img/profile-img-default.jpg' %}" alt="Image placeholder" class="img-fluid mb-4">
                             {% endif %}
                         </div>
                         <div class="desc col-lg-10">
-                            <a href="{% url 'about' blog.author.id %}"> <h3>{{blog.author.first_name}} {{blog.author.last_name}}</h3> </a>
+                            <a href="{% url 'about' blog.author.id %}">
+                                {% if blog.author.firstName %}
+                                <h3>{{blog.author.first_name}} {{blog.author.last_name}}</h3>
+                                {% else %}
+                                <h3>{{blog.author.username}}</h3>
+                                {% endif %}
+                            </a>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos
                                 fugit cupiditate numquam!</p>
                         </div>
@@ -54,4 +86,9 @@ Blog
         </div>
     </section>
 </div><!-- END COLORLIB-MAIN -->
+
+{% else %}
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos
+    fugit cupiditate numquam!</p>
+{% endif %}
 {% endblock %}

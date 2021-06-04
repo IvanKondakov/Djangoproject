@@ -34,23 +34,26 @@ Blog
 							<h3 class="mb-4"><a href="{% url 'blog_detail' el.id %}"> {{ el.title }} </a></h3>
 							<p class="mb-4">{{ el.desc }}</p>
 							<div class="author mb-4 d-flex align-items-center">
-								{% if page_user.profile_pic %}
+								{% if el.author.profile.profile_pic %}
 								<a href="{% url 'about' el.author.id %}" class="img" style="background-image: url({{ el.author.profile.profile_pic.url }});"></a>
-								{% elif page_user.tg_pic %}
+								{% elif el.author.tg_pic %}
 								<div class="img mb-4" style="background-image: url({{ el.author.tg_pic }});"></div>
 								{% else %}
 								<div class="img mb-4" style="background-image: url({% static 'main/img/profile-img-default.jpg' %});"></div>
 								{% endif %}
 								<div class="ml-3 info">
 									<span>Written by</span>
+									{% if el.author.firstName %}
 									<h3><a href="{% url 'about' el.author.id %}">{{ el.author.first_name }} {{ el.author.last_name }}</a>, <span>{{ el.created_at }}</span></h3>
+									{% else %}
+									<h3><a href="{% url 'about' el.author.id %}">{{ el.author.username }} </a>, <span>{{ el.created_at }}</span></h3>
+									{% endif %}
 								</div>
 							</div>
 							<div class="meta-wrap align-items-center">
 								<div class="half order-md-last">
 									<p class="meta">
 										<span><i class="icon-heart"></i>{{ el.total_lkes }}</span>
-										<span><i class="icon-comment"></i>5</span>
 										<span><a href="{% url 'blog_update' el.id %}"><i class="icon-edit"></i> </a></span>
 									</p>
 								</div>

@@ -45,17 +45,19 @@ About
                             <p><span>City:</span> <a href="tel://1234567920">{{page_user.location}}</a></p>
                         </div>
                     </div>
-                    <ul class="ftco-social mt-3">
-                        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                    </ul>
                     <div class="form-group">
                         {% if user.id == page_user.user_id %}
                         <a href="{% url 'about_edit' user.id %}"> <input type="submit" value="Edit" class="mt-2 btn btn-dark submit"> </a>
                         {% else %}
-                        <input type="submit" value="Follow" class="mt-2 btn btn-dark submit">
-                        {% endif %}
+                        <form class="" action="{% url 'follow_unfollow_profile' %}" method="post">
+                            {% csrf_token %}
+                            {% if follow %}
+                            <button type="submit" name="profile_pk" class="btn btn-danger" value="{{ page_user.user.id }}"> Unfollow </button>
+                            {% else %}
+                            <button type="submit" name="profile_pk" class="btn btn-dark" value="{{ page_user.user.id }}"> Follow </button>
+                            {% endif %}
+                            {% endif %}
+                        </form>
                     </div>
                 </div>
             </div>

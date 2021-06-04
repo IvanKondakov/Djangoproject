@@ -34,3 +34,4 @@ class Blog(models.Model):
     class Meta:
         verbose_name = 'Blog'
         verbose_name_plural = 'Blog'
+        ordering = ['-created_at']

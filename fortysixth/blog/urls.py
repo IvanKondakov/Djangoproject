@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
     path('', login_required(views.BlogDetailView.as_view()), name='blog'),
-    path('feed', login_required(views.FeedDetailView.as_view()), name='feed'),
+    path('feed', login_required(views.FeedDetailView), name='feed'),
     path('create', login_required(views.BlogCreateView.as_view()), name='create'),
     path('<int:pk>', views.DetailView.as_view(), name='blog_detail'),
     path('<int:pk>/update', login_required(views.BlogUpdateView.as_view()), name='blog_update'),
