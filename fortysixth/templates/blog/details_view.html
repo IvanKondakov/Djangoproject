@@ -63,7 +63,7 @@ Blog
                         <div class="bio mr-5">
                             {% if blog.author.profile.profile_pic %}
                             <a href="{% url 'about' blog.author.id %}"> <img src="{{ blog.author.profile.profile_pic.url }}" alt="Image placeholder" class="img-fluid mb-4"> </a>
-                            {% elif el.author.profile.tg_pic %}
+                            {% elif blog.author.profile.tg_pic %}
                             <a href="{% url 'about' blog.author.id %}"> <img src="{{ blog.author.profile.tg_pic}}" alt="Image placeholder" class="img-fluid mb-4"> </a>
                             {% else %}
                             <img src="{% static 'main/img/profile-img-default.jpg' %}" alt="Image placeholder" class="img-fluid mb-4">
