@@ -25,7 +25,6 @@ class UserForm(UserCreationForm):
                 'data-placement': 'left',
                 'title': "Enter the same password as before, for verification."})
     )
-    #birth_date = forms.DateField(help_text='Required. Format: YYYY-MM-DD')
 
     class Meta:
         model = User

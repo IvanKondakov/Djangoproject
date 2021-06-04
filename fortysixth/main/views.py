@@ -33,19 +33,6 @@ class edit_about(UpdateView):
         pk = self.kwargs["pk"]
         return reverse_lazy("about", kwargs={"pk": pk})
 
-
-@login_required
-def resume(request):
-    return render(request, 'main/resume.html')
-
-@login_required
-def portfolio(request):
-    return render(request, 'main/portfolio.html')
-
-@login_required
-def contact(request):
-    return render(request, 'main/contact.html')
-
 class UserEditView(UpdateView):
     form_class = EditProfileForm
     template_name = 'main/edit_profile.html'

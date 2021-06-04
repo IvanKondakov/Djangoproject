@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 from .tokens import account_activation_token
 from loguru import logger
 from .bot_log import tel_bot_logs
+from django.http import HttpResponse
 
 def sign_up(request):
     if request.method == 'POST':
@@ -48,6 +49,7 @@ def activate(request, uidb64, token):
     try:
         uid = urlsafe_base64_decode(uidb64)
         user = User.objects.get(pk=uid)
+        logger.info(user)
     except (TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
 
@@ -56,6 +58,12 @@ def activate(request, uidb64, token):
         user.profile.email_confirmed = True
         user.save()
         login(request, user)
-        return redirect('home')
+        return redirect('blog')
     else:
         return render(request, 'registration/account_activation_invalid.html')
+
+def complete(request):
+    id = request.GET.get("id", "")
+    username = request.GET.get("username", "")
+    output = "<h2>User</h2><h3>id: {0}  name: {1}</h3>".format(id, username)
+    return HttpResponse(output)
