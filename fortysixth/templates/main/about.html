@@ -13,6 +13,8 @@ About
             <div class="col-md-8 text text-center">
                 {% if page_user.profile_pic %}
                 <div class="img mb-4" style="background-image: url({{ page_user.profile_pic.url }});"></div>
+                {% elif %}
+                <div class="img mb-4" style="background-image: url({{ page_user.tg_pic }});"></div>
                 {% else %}
                 <div class="img mb-4" style="background-image: url({% static 'main/img/profile-img-default.jpg' %});"></div>
                 {% endif %}
