@@ -19,7 +19,7 @@ About
                 <div class="img mb-4" style="background-image: url({% static 'main/img/profile-img-default.jpg' %});"></div>
                 {% endif %}
                 <div class="desc">
-                    <h2 class="subheading">Hello I'm</h2>
+                    <h2 class="subheading">Hello I'm {% if page_user.user.username%} {{ page_user.user.username}} {% endif %}</h2>
                     <h1 class="mb-4">{{ page_user.user.first_name }} {{ page_user.user.last_name }}</h1>
                     <div class="row d-flex mb-12 contact-info">
                         <div class="w-100"></div>

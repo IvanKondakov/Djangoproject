@@ -6,63 +6,69 @@ Blog
 {% block active2 %} class="colorlib-active" {% endblock %}
 {% block content %}
 <!-- ======= Blog Section ======= -->
-	<div id="colorlib-main">
-<section class="ftco-section">
-    <div class="container">
+<div id="colorlib-main">
+	<section class="ftco-section">
+		<div class="container">
 
-        <div class="row justify-content-center mb-5 pb-2">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-                <h2 class="mb-4">Articles</h2>
-                <p><a href="{% url 'create' %}"><button type="button" class="btn btn-secondary p-3 px-xl-2 py-xl-2"> Add new post </button></a></p>
-            </div>
-        </div>
+			<div class="row justify-content-center mb-5 pb-2">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h2 class="mb-4">Articles</h2>
+					<p><a href="{% url 'create' %}"><button type="button" class="btn btn-secondary p-3 px-xl-2 py-xl-2"> Add new post </button></a></p>
+				</div>
+			</div>
 
-        <div class="row">
-            {% if blog %}
-            {% for el in blog %}
-            {% if user.is_authenticated %}
-            {% if user.id == el.author.id %}
-            <div class="col-md-4">
-                <div class="blog-entry ftco-animate">
-                    {% if el.image %}
-                    <a href="{% url 'blog_detail' el.id %}" class="img img-2" style="background-image: url({{ el.image.url }});"></a>
-                    {% else %}
-                    <a href="{% url 'blog_detail' el.id %}" class="img img-2" style="background-image: url({% static 'main/img/profile-img-default.jpg' %});"></a>
-                    {% endif %}
-                    <div class="text text-2 pt-2 mt-3">
-                        <span class="category mb-3 d-block"><a href="{% url 'category' el.category %}"> {{ el.category }} </a></span>
-                        <h3 class="mb-4"><a href="{% url 'blog_detail' el.id %}"> {{ el.title }} </a></h3>
-                        <p class="mb-4">{{ el.desc }}</p>
-                        <div class="author mb-4 d-flex align-items-center">
-                            <a href="{% url 'about' el.author.id %}" class="img" style="background-image: url({{ el.author.profile.profile_pic.url }});"></a>
-                            <div class="ml-3 info">
-                                <span>Written by</span>
-                                <h3><a href="{% url 'about' el.author.id %}">{{ el.author.first_name }} {{ el.author.last_name }}</a>, <span>{{ el.created_at }}</span></h3>
-                            </div>
-                        </div>
-                        <div class="meta-wrap align-items-center">
-                            <div class="half order-md-last">
-                                <p class="meta">
-                                    <span><i class="icon-heart"></i>{{ el.total_lkes }}</span>
-                                    <span><i class="icon-comment"></i>5</span>
-                                    <span><a href="{% url 'blog_update' el.id %}"><i class="icon-edit"></i> </a></span>
-                                </p>
-                            </div>
-                            <div class="half">
-                                <p><a href="{% url 'blog_detail' el.id %}" class="btn py-2">Continue Reading <span class="ion-ios-arrow-forward"></span></a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-            {% endif %}
-            {% endfor %}
-            {% else %}
-            <p> </p>
-            {% endif %}
-        </div>
+			<div class="row">
+				{% if blog %}
+				{% for el in blog %}
+				{% if user.is_authenticated %}
+				{% if user.id == el.author.id %}
+				<div class="col-md-4">
+					<div class="blog-entry ftco-animate">
+						{% if el.image %}
+						<a href="{% url 'blog_detail' el.id %}" class="img img-2" style="background-image: url({{ el.image.url }});"></a>
+						{% else %}
+						<a href="{% url 'blog_detail' el.id %}" class="img img-2" style="background-image: url({% static 'main/img/profile-img-default.jpg' %});"></a>
+						{% endif %}
+						<div class="text text-2 pt-2 mt-3">
+							<span class="category mb-3 d-block"><a href="{% url 'category' el.category %}"> {{ el.category }} </a></span>
+							<h3 class="mb-4"><a href="{% url 'blog_detail' el.id %}"> {{ el.title }} </a></h3>
+							<p class="mb-4">{{ el.desc }}</p>
+							<div class="author mb-4 d-flex align-items-center">
+								{% if page_user.profile_pic %}
+								<a href="{% url 'about' el.author.id %}" class="img" style="background-image: url({{ el.author.profile.profile_pic.url }});"></a>
+								{% elif page_user.tg_pic %}
+								<div class="img mb-4" style="background-image: url({{ el.author.tg_pic }});"></div>
+								{% else %}
+								<div class="img mb-4" style="background-image: url({% static 'main/img/profile-img-default.jpg' %});"></div>
+								{% endif %}
+								<div class="ml-3 info">
+									<span>Written by</span>
+									<h3><a href="{% url 'about' el.author.id %}">{{ el.author.first_name }} {{ el.author.last_name }}</a>, <span>{{ el.created_at }}</span></h3>
+								</div>
+							</div>
+							<div class="meta-wrap align-items-center">
+								<div class="half order-md-last">
+									<p class="meta">
+										<span><i class="icon-heart"></i>{{ el.total_lkes }}</span>
+										<span><i class="icon-comment"></i>5</span>
+										<span><a href="{% url 'blog_update' el.id %}"><i class="icon-edit"></i> </a></span>
+									</p>
+								</div>
+								<div class="half">
+									<p><a href="{% url 'blog_detail' el.id %}" class="btn py-2">Continue Reading <span class="ion-ios-arrow-forward"></span></a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endif %}
+				{% endif %}
+				{% endfor %}
+				{% else %}
+				<p> </p>
+				{% endif %}
+			</div>
 		</div>
-</section><!-- End Blog Section -->
+	</section><!-- End Blog Section -->
 </div>
 {% endblock %}
