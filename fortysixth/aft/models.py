@@ -15,6 +15,7 @@ class Profile(models.Model):
     status =  models.CharField(max_length=30, blank=True)
     email_confirmed = models.BooleanField(default=False)
     profile_pic = models.ImageField(null = True, blank=True, upload_to= "images/profile")
+    tg_pic = models.CharField(max_length=1000, blank=True)
 
     def __str__(self):
         return f"{self.user}"

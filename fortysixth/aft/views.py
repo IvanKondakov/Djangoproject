@@ -11,6 +11,7 @@ from .tokens import account_activation_token
 from loguru import logger
 from .bot_log import tel_bot_logs
 from django.http import HttpResponse
+from .models import Profile
 
 def sign_up(request):
     if request.method == 'POST':
@@ -66,13 +67,16 @@ def activate(request, uidb64, token):
 
 def complete(request):
     username = request.GET.get("username", "")
-    user = username
-    logger.info(user)
-    user.is_active = True
+    hash = request.GET.get("hash", "")
+    hash= urlsafe_base64_encode(force_bytes(hash))
+    userpic = request.GET.get("photo_url", "")
+    user = User.objects.create(username = username, password = hash)
+    login(request, user)
     user.save()
 
-    profileform = username
-    profileform.is_active = True
-    profileform.save()
+    user_id = User.objects.get(username = username)
+    profile = Profile.objects.get(user = user_id.id)
+    profile.tg_pic = userpic
+    profile.save()
 
     return redirect('blog')
