@@ -70,13 +70,17 @@ def complete(request):
     hash = request.GET.get("hash", "")
     hash= urlsafe_base64_encode(force_bytes(hash))
     userpic = request.GET.get("photo_url", "")
-    user = User.objects.create(username = username, password = hash)
-    login(request, user)
-    user.save()
+    ex = str(User.objects.filter(username=username))
+    if ex != '<QuerySet []>' :
+        login(request, User.objects.get(username = username))
+    else:
+        user = User.objects.create(username = username)
+        login(request, user)
+        user.save()
 
-    user_id = User.objects.get(username = username)
-    profile = Profile.objects.get(user = user_id.id)
-    profile.tg_pic = userpic
-    profile.save()
+        user_id = User.objects.get(username = username)
+        profile = Profile.objects.get(user = user_id.id)
+        profile.tg_pic = userpic
+        profile.save()
 
     return redirect('blog')
