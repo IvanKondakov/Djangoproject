@@ -6,15 +6,13 @@ from blog.models import Blog
 from django.views.generic import UpdateView, DetailView
 from django.contrib.auth.forms import UserChangeForm
 from django.urls import reverse_lazy
+from loguru import logger
 from .forms import EditProfileForm, ProfileForm
 
-@login_required
-def index(request):
-    return render(request, 'main/index.html')
 
 @login_required
 def default(request):
-    return redirect('home')
+    return redirect('blog')
 
 class about(DetailView):
     model = Profile
@@ -30,9 +28,11 @@ class about(DetailView):
 class edit_about(UpdateView):
     model = Profile
     template_name= 'main/edit_about.html'
-    success_url ='/profile/'
     form_class = ProfileForm
-    #fields = ['bio', 'location', 'website', 'phone', 'age', 'degree', 'birth_date', 'profile_pic', 'status']
+    def get_success_url(self):
+        pk = self.kwargs["pk"]
+        return reverse_lazy("about", kwargs={"pk": pk})
+
 
 @login_required
 def resume(request):

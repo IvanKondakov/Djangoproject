@@ -1,18 +1,13 @@
 {% extends 'registration/layout_reg.html' %}
 {% load static %}
-
 {% block title %}
 Вход
 {% endblock %}
-
 {% block content %}
-<div class="wrapper fadeInDown">
-  <div id="formContent">
-    <!-- Tabs Titles -->
+<div id="colorlib-main">
+    <section class="ftco-section contact-section">
+        <div class="container">
 
-    <!-- Icon -->
-
-    <!-- Login Form -->
     <form method="post">
       {% csrf_token %}
       {{ form.username }}
@@ -26,6 +21,7 @@
       <a class="underlineHover" href="{% url 'sign-up' %}">Register</a>
     </div>
 
-  </div>
+</div>
+</section>
 </div>
 {% endblock %}

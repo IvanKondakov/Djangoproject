@@ -3,62 +3,61 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> {% block title %} {% endblock %}</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <title>{% block title %} {% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Favicons -->
-    <link href="{% static 'main/img/favicon.png' %}" rel="icon">
-    <link href="{% static 'main/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/animate.css' %}">
 
-    <!-- Vendor CSS Files -->
-    <link href="{% static '/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static '/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
-    <link href="{% static '/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-    <link href="{% static '/vendor/venobox/venobox.css' %}" rel="stylesheet">
-    <link href="{% static '/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-    <link href="{% static '/vendor/aos/aos.css' %}" rel="stylesheet">
-    <link href="{% static 'main/css/reg.css' %}" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/46a7673bef.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'main/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'main/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'main/css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/jquery.timepicker.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'main/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
 </head>
 
 <body>
 
-    <!-- ======= Mobile nav toggle button ======= -->
-    <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+    <div id="colorlib-page">
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
+        </svg></div>
 
-    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
-
-    <!-- Vendor JS Files -->
-    <script src="{% static '/vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static '/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static '/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
-    <script src="{% static '/vendor/php-email-form/validate.js' %}"></script>
-    <script src="{% static '/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
-    <script src="{% static '/vendor/counterup/counterup.min.js' %}"></script>
-    <script src="{% static '/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-    <script src="{% static '/vendor/venobox/venobox.min.js' %}"></script>
-    <script src="{% static '/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
-    <script src="{% static '/vendor/typed.js/typed.min.js' %}"></script>
-    <script src="{% static '/vendor/aos/aos.js' %}"></script>
-
-    <!-- Template Main JS File -->
+    <script src="{% static 'main/js/jquery.min.js' %}"></script>
+    <script src="{% static 'main/js/jquery-migrate-3.0.1.min.js' %}"></script>
+    <script src="{% static 'main/js/popper.min.js' %}"></script>
+    <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'main/js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'main/js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'main/js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'main/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'main/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'main/js/aos.js' %}"></script>
+    <script src="{% static 'main/js/jquery.animateNumber.min.js' %}"></script>
+    <script src="{% static 'main/js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'main/js/scrollax.min.js' %}"></script>
     <script src="{% static 'main/js/main.js' %}"></script>
-    <script type="text/javascript">
-    $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-    </script>
 </body>
 
 </html>

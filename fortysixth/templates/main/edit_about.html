@@ -3,60 +3,55 @@
 {% block title %}
 About
 {% endblock %}
-{% block active2 %} class="active" {% endblock %}
+{% block active1 %} class="colorlib-active" {% endblock %}
 {% block content %}
 <!-- ======= About Section ======= -->
 {% if user.id == profile.user.id %}
-<section id="about" class="about">
-    <div class="container">
-        <form enctype="multipart/form-data" method="post">
-            {% csrf_token %}
-            <div class="section-title">
-                <h2>About</h2>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4" data-aos="fade-right">
-                    {% if user.profile.profile_pic %}
-                    <img src="{{ user.profile.profile_pic.url }}" class="img-fluid"">
-                {{form.profile_pic}}
-              {% else %}
-              <img src=" {% static 'main/img/profile-img-default.jpg' %}">
-                {{form.profile_pic}}
-                    {% endif %}
+<div id="colorlib-main">
+    <section class="ftco-section contact-section">
+        <div class="container">
+            <div class="row d-flex mb-5 contact-info">
+                <div class="col-md-12 mb-4">
+                    <h2 class="h4 font-weight-bold">About</h2>
                 </div>
-                <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                <div class="w-100"></div>
+                <div class="col-md-12">
                     <h3> {{ user.first_name }} {{ user.last_name }} </h3>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <ul>
-                                <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> {{form.birth_date}} </li>
-                                <li><i class="icofont-rounded-right"></i> <strong>Website:</strong> {{form.website}} </li>
-                                <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> {{form.phone}} </li>
-                                <li><i class="icofont-rounded-right"></i> <strong>City:</strong> {{form.location}} </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6">
-                            <ul>
-                                <li><i class="icofont-rounded-right"></i> <strong>Age:</strong> {{ form.age }} </li>
-                                <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong> {{ form.degree }} </li>
-                                <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong> {{ form.status }} </li>
-                                <li><i class="icofont-rounded-right"></i> <strong>E-MAIL change -> settings</strong> </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    <hr />
-                    <h3>Biography</h3>
-                    <p>
-                        {{form.bio}}
-                    </p>
-                      <input class="btn btn-success" type="submit" value="submit">
                 </div>
             </div>
-        </form>
-    </div>
-</section><!-- End About Section -->
+            <div class="row block-9">
+                <div class="col-md-6">
+                    <form enctype="multipart/form-data" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            Birthday: {{form.birth_date}} </div>
+                        <div class="form-group">
+                            Website: {{form.website}} </div>
+                        <div class="form-group">
+                            Phone: {{form.phone}} </div>
+                        <div class="form-group">
+                            City: {{form.location}} </div>
+                        <div class="form-group">
+                            Age: {{form.age}} </div>
+                        <input class="btn btn-success" type="submit" value="submit">
+                    </form>
+                </div>
+                <div class="col-md-6">
+                     <br/>
+                    <div class="col-lg-6" data-aos="fade-right">
+                        {% if user.profile.profile_pic %}
+                        <img src="{{ user.profile.profile_pic.url }}" class="img-fluid"> <br/> <br/>
+                            {{form.profile_pic}}
+                          {% else %}
+                          <img src=" {% static 'main/img/profile-img-default.jpg' %}" class="img-fluid"> <br/> <br/>
+                        {{form.profile_pic}}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 {% endif %}
 
 {% endblock %}

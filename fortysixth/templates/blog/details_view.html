@@ -3,42 +3,55 @@
 {% block title %}
 Blog
 {% endblock %}
-{% block css %} <link href="{% static 'main/css/blog_detail.css' %}" rel="stylesheet"> {% endblock %}
+{% block active2 %} class="colorlib-active" {% endblock %}
 {% block content %}
 
-<!-- ======= Blog Section ======= -->
-<section id="services" class="services">
-    <div class="container">
+<div id="colorlib-main">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ftco-animate">
+                    <h2 class="mb-3 font-weight-bold"> {{ blog.title }} </h2>
+                    {% if user.is_authenticated %}
+                    {% if blog.image %}
+                    <p>
+                        <img src="{{ blog.image.url }}" alt="" class="img-fluid" style="max-width: 60%;">
+                    </p>
+                    {% else %}
+                    <p>
+                        <img src="{% static 'main/img/profile-img-default.jpg' %}" alt="" class="img-fluid" style="max-width: 60%;">
+                    </p>
+                    {% endif %}
+                    <p>{{ blog.full_text.html | safe}}</p>
+                    {% endif %}
+                    <div class="tag-widget post-tag-container mb-5 mt-5">
+                            <div class="tagcloud col-lg-6">
+                                <form class="" action="{% url 'like_post' blog.pk %}" method="post">
+                                    {% csrf_token %}
+                                 <button type="submit" name="blog_id" class="btn btn-warning"  value="{{ blog.id }}">Likes | {{ total_lkes }}</button> <br/> <br/>
+                                </form>
+                                <a href="#" class="tag-cloud-link"> Follow {{ blog.author.first_name }} </a>
+                                <a href="#" class="tag-cloud-link"> Follow {{ blog.category }} </a>
+                            </div>
+                    </div>
 
-        <div class="section-title">
-            <h2>{{ blog.title }}</h2>
-
-            {% if user.is_authenticated %}
-            {{ blog.full_text.html | safe}}
-
-            {% endif %}
-
-
+                    <div class="about-author d-flex p-4 bg-light">
+                        <div class="bio mr-5">
+                            {% if blog.author.profile.profile_pic %}
+                        <a href="{% url 'about' blog.author.id %}">  <img src="{{ blog.author.profile.profile_pic.url }}" alt="Image placeholder" class="img-fluid mb-4"> </a>
+                            {% else %}
+                            <img src="{% static 'main/img/profile-img-default.jpg' %}" alt="Image placeholder" class="img-fluid mb-4">
+                            {% endif %}
+                        </div>
+                        <div class="desc col-lg-10">
+                            <a href="{% url 'about' blog.author.id %}"> <h3>{{blog.author.first_name}} {{blog.author.last_name}}</h3> </a>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos
+                                fugit cupiditate numquam!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="media block-update-card">
-      <a class="pull-left" href="{% url 'about' blog.author.id %}">
-        {% if blog.author.profile.profile_pic %}
-        <img class="media-object update-card-MDimentions" src="{{ blog.author.profile.profile_pic.url }}" alt="...">
-      {% else %}
-      <img class="media-object update-card-MDimentions"  src=" {% static 'main/img/profile-img-default.jpg' %}">
-        {% endif %}
-            </a>
-      <div class="media-body update-card-body">
-        <h4 class="media-heading" style="margin-left:10px;"> {{blog.author.first_name}} {{blog.author.last_name}}</h4>
-        <div class="btn-toolbar card-body-social" role="toolbar">
-          <div class="btn-group fa fa-github-alt git"></div>
-          <div class="btn-group linkedin fa fa-linkedin-square"></div>
-          <div class="btn-group twitter fa fa-twitter"></div>
-          <div class="btn-group facebook fa fa-facebook"></div>
-          <div class="btn-group google-plus fa fa-google-plus"></div>
-        </div>
-      </div>
-      </div>
-    </div>
-</section><!-- End Blog Section -->
+    </section>
+</div><!-- END COLORLIB-MAIN -->
 {% endblock %}

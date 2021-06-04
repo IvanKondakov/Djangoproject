@@ -135,7 +135,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'blog'
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
@@ -158,3 +158,5 @@ QUILL_CONFIGS = {
         }
     }
 }
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

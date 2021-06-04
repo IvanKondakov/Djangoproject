@@ -3,94 +3,66 @@
 {% block title %}
 Blog
 {% endblock %}
-{% block active5 %} class="active" {% endblock %}
-{% block css %}
-<link href="{% static 'main/css/blog.css' %}" rel="stylesheet">
-<link href="{% static 'main/css/blog.scss' %}" rel="stylesheet">
-{% endblock %}
+{% block active2 %} class="colorlib-active" {% endblock %}
 {% block content %}
 <!-- ======= Blog Section ======= -->
-<section id="services" class="services">
+	<div id="colorlib-main">
+<section class="ftco-section">
     <div class="container">
 
-        <div class="section-title">
-            <h2>Blog</h2>
-            <a href="{% url 'create' %}"><button type="button" class="btn btn-info"><i class="bx bx-plus-medical"> </i> Add new post </button></a>
+        <div class="row justify-content-center mb-5 pb-2">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <h2 class="mb-4">Articles</h2>
+                <p><a href="{% url 'create' %}"><button type="button" class="btn btn-secondary p-3 px-xl-2 py-xl-2"> Add new post </button></a></p>
+            </div>
         </div>
 
         <div class="row">
-            <div class="col-lg-7" data-aos="fade-up">
-                {% if blog %}
-                {% for el in blog %}
-                {% if user.is_authenticated %}
-                {% if user.id == el.author.id %}
-                <div class="card md-12" style="max-width: 540px; margin-top:10px;">
-                    <div class="row g-0">
-                        <div class="col-md-4 fluid">
-                            {% if el.image %}
-                            <img class="img-fluid mx-auto d-block" src="{{ el.image.url }}">
-                            {% else %}
-                            <img class="img-fluid mx-auto d-block" src="{% static 'main/img/profile-img-default.jpg' %}">
-                            {% endif %}
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body" style="padding-left: 10px;">
-                                <div class="row">
-                                    <div class="col-md-10">
-                                        <a href="{% url 'blog_detail' el.id %}">
-                                            <h5 class="card-title">{{ el.title }} </h5>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <a href="{% url 'blog_update' el.id %}"><i class="far fa-edit"></i></a>
-                                    </div>
-                                </div>
-                                <p class="card-text"> {{ el.desc }}</p>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="card-footer text-muted text-center">
-                        <p class="card-text"><small class="text-muted;"><b> {{ el.author.first_name }} {{ el.author.last_name }} </b>| {{ el.created_at }}</small></p>
-                    </div>
-                </div>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-                {% else %}
-                <p> Nothing </p>
-                {% endif %}
-            </div>
-            <div class="vl col-lg-1"></div>
-            <div class="col-lg-4" data-aos="fade-up">
-                {% if blog %}
-                <h3 class="resume-title">Feed</h3>
-                {% for el in blog %}
-                {% if user.is_authenticated %}
-                {% if user.id != el.author.id %}
-                <div class="card-new md-4 text-left" style="width: 470px; margin-top:10px;">
-                    <div class="row g-0">
-                        <div class="col-md-5 fluid mx-auto" style="padding-left: 10px; padding-right:0px">
-                            <div class="card-body">
-                                <a href="{% url 'blog_detail' el.id %}">
-                                    <h6 class="card-title">{{ el.title }} </h6>
-                                </a>
+            {% if blog %}
+            {% for el in blog %}
+            {% if user.is_authenticated %}
+            {% if user.id == el.author.id %}
+            <div class="col-md-4">
+                <div class="blog-entry ftco-animate">
+                    {% if el.image %}
+                    <a href="{% url 'blog_detail' el.id %}" class="img img-2" style="background-image: url({{ el.image.url }});"></a>
+                    {% else %}
+                    <a href="{% url 'blog_detail' el.id %}" class="img img-2" style="background-image: url({% static 'main/img/profile-img-default.jpg' %});"></a>
+                    {% endif %}
+                    <div class="text text-2 pt-2 mt-3">
+                        <span class="category mb-3 d-block"><a href="{% url 'category' el.category %}"> {{ el.category }} </a></span>
+                        <h3 class="mb-4"><a href="{% url 'blog_detail' el.id %}"> {{ el.title }} </a></h3>
+                        <p class="mb-4">{{ el.desc }}</p>
+                        <div class="author mb-4 d-flex align-items-center">
+                            <a href="{% url 'about' el.author.id %}" class="img" style="background-image: url({{ el.author.profile.profile_pic.url }});"></a>
+                            <div class="ml-3 info">
+                                <span>Written by</span>
+                                <h3><a href="{% url 'about' el.author.id %}">{{ el.author.first_name }} {{ el.author.last_name }}</a>, <span>{{ el.created_at }}</span></h3>
                             </div>
                         </div>
-                          <div class="vl fluid mx-auto" style="height:auto"></div>
-                      <div class="col-md-4 fluid mx-auto text-right">
-                            <p class="card-text" style="font-size: 14px"><small class="text-muted"> <a href="{% url 'about' el.author.id %}"><b> {{ el.author.first_name }} {{ el.author.last_name }} </b></a> | {{ el.created_at }}</small></p>
+                        <div class="meta-wrap align-items-center">
+                            <div class="half order-md-last">
+                                <p class="meta">
+                                    <span><i class="icon-heart"></i>{{ el.total_lkes }}</span>
+                                    <span><i class="icon-comment"></i>5</span>
+                                    <span><a href="{% url 'blog_update' el.id %}"><i class="icon-edit"></i> </a></span>
+                                </p>
+                            </div>
+                            <div class="half">
+                                <p><a href="{% url 'blog_detail' el.id %}" class="btn py-2">Continue Reading <span class="ion-ios-arrow-forward"></span></a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
-                {% else %}
-                <p> Nothing </p>
-                {% endif %}
             </div>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+            {% else %}
+            <p> </p>
+            {% endif %}
         </div>
-    </div>
+		</div>
 </section><!-- End Blog Section -->
-
+</div>
 {% endblock %}

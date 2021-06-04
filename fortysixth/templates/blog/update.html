@@ -9,46 +9,52 @@ Blog
 {% block content %}
 
 <!-- ======= Blog Section ======= -->
-<section id="services" class="services">
-    <div class="container">
-        {% if user.is_authenticated %}
-            {% if user.id == blog.author.id %}
-        <h1>Edit post</h1>
-        <form method="post" id="add" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="form-group">
-              <label> Title </label>
-                {{ form.title }}
-                <label> Description </label>
-                {{ form.desc }}
-                {{ form.author }}
-            </div>
-            <div class="form-group">
-                {{ form.media }}
-                {{ form.full_text }}
-            </div>
-            {{ form.image }}
-        </form>
-        <div class="row">
-            <div class="col-sm-10">
-                <input class="btn btn-success" type="submit" value="Update" form="add">
-            </div>
-            <div class="col-sm">
-                <form method="post" action="{% url 'blog_delete' blog.id %}">
-                    {% csrf_token %}
-                    <input class="btn btn-danger float-right" type="submit" value="Delete">
-                </form>
-            </div>
-        </div>
-        {% else %}
-        <p> Fuck </p>
-        {% endif %}
-        {% endif %}
-    </div>
-    <script type="text/javascript">
-        var name= "{{ user.id }}"
-        document.getElementById("au").value = name
-    </script>
-</section><!-- End Blog Section -->
+<div id="colorlib-main">
+    <section class="ftco-section">
+        <div class="container">
 
+            {% if user.is_authenticated %}
+            {% if user.id == blog.author.id %}
+            <h1>Edit post</h1>
+            <form method="post" id="add" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label> Title </label>
+                    {{ form.title }}
+                    <label> Description </label>
+                    {{ form.desc }}
+                    <label> Category </label>
+                    {{ form.category }}
+                    {{ form.author }}
+                </div>
+                <div class="form-group">
+                    {{ form.media }}
+                    {{ form.full_text }}
+                </div>
+                {{ form.image }}
+            </form>
+            <br/>
+            <div class="row">
+                <div class="col-sm-10">
+                    <input class="btn btn-success" type="submit" value="Update" form="add">
+                </div>
+                <div class="col-sm">
+                    <form method="post" action="{% url 'blog_delete' blog.id %}">
+                        {% csrf_token %}
+                        <input class="btn btn-danger float-right" type="submit" value="Delete">
+                    </form>
+                </div>
+            </div>
+            {% else %}
+            <p> Fuck </p>
+            {% endif %}
+            {% endif %}
+        </div>
+    </section>
+</div>
+<!-- Custom -->
+<script type="text/javascript">
+    var name = "{{ user.id }}"
+    document.getElementById("au").value = name
+</script>
 {% endblock %}
