@@ -25,12 +25,14 @@ Blog
 				<div class="col-md-4">
 					<div class="blog-entry ftco-animate">
 						{% if el.image %}
-						<a href="{% url 'blog_detail' el.id %}" class="img img-2" style="background-image: url({{ el.image.url }});"></a>
+						<a href="{% url 'blog_detail' el.id %}" class="img img-2 shadow p-3 mb-2 bg-body rounded" style="background-image: url({{ el.image.url }});"></a>
 						{% else %}
-						<a href="{% url 'blog_detail' el.id %}" class="img img-2" style="background-image: url({% static 'main/img/profile-img-default.jpg' %});"></a>
+						<a href="{% url 'blog_detail' el.id %}" class="img img-2 shadow p-3 mb-2 bg-body rounded" style="background-image: url({% static 'main/img/profile-img-default.jpg' %});"></a>
 						{% endif %}
-						<div class="text text-2 pt-2 mt-3">
-							<span class="category mb-3 d-block"><a href="{% url 'category' el.category %}"> {{ el.category }} </a></span>
+						<div class="card">
+						<div class="card-body text text-2 pt-2 mt-3">
+							<span class="category badge rounded-pill bg-light text-dark"><a href="{% url 'category' el.category %}"> #{{ el.category }} </a></span>
+						<!--	<span class="category mb-3 d-block"><a href="{% url 'category' el.category %}"> {{ el.category }} </a></span> -->
 							<h3 class="mb-4"><a href="{% url 'blog_detail' el.id %}"> {{ el.title }} </a></h3>
 							<p class="mb-4">{{ el.desc }}</p>
 							<div class="author mb-4 d-flex align-items-center">
@@ -58,10 +60,11 @@ Blog
 									</p>
 								</div>
 								<div class="half">
-									<p><a href="{% url 'blog_detail' el.id %}" class="btn py-2">Continue Reading <span class="ion-ios-arrow-forward"></span></a></p>
+									<p><a href="{% url 'blog_detail' el.id %}" class="btn py-2" style="padding:0;">Continue Reading <span class="ion-ios-arrow-forward"></span></a></p>
 								</div>
 							</div>
 						</div>
+					</div>
 					</div>
 				</div>
 				{% endif %}

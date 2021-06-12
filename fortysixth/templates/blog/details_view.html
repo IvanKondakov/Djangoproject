@@ -23,16 +23,16 @@ Blog
                     {% endif %}
                     <p>{{ blog.full_text.html | safe}}</p>
 
-                    <div class="tag-widget post-tag-container mb-5 mt-5">
+                    <div class="tag-widget post-tag-container mb-5 mt-5 d-flex align-items-center">
                         <div class="row">
                             <div class="col lg-4">
                                 <form class="" action="{% url 'like_post' blog.pk %}" method="post">
                                     {% csrf_token %}
 
                                     {% if  liked %}
-                                    <button type="submit" name="blog_id" class="btn btn-danger" value="{{ blog.id }}">Unlike | {{ total_lkes }}</button> <br /> <br />
+                                    <button type="submit" name="blog_id" class="btn btn-danger" value="{{ blog.id }}"><i class="icon-heart"></i></button> {{ total_lkes }} <br /> <br />
                                     {% else %}
-                                    <button type="submit" name="blog_id" class="btn btn-warning" value="{{ blog.id }}">Likes | {{ total_lkes }}</button> <br /> <br />
+                                    <button type="submit" name="blog_id" class="btn btn-warning" value="{{ blog.id }}"><i class="icon-heart"></i></button> {{ total_lkes }} <br /> <br />
                                     {% endif %}
                                 </form>
                             </div>
