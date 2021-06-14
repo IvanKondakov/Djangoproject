@@ -6,24 +6,26 @@
 {% endblock %}
 
 {% block content %}
-<div id="colorlib-main">
-<section class="ftco-section">
-<div class="container">
 
-      <div class="col-md-7 heading-section text-center ftco-animate">
-          <h2 class="mb-4">Choose the option</h2>
-      </div>
+<section class="sign-in">
+    <div class="container">
+        <div class="signin-content">
 
-    <div class="row">
-        <div class="col-sm">
-            <p><a href="{% url 'sign-up' %}" class="btn btn-primary p-3 px-xl-4 py-xl-3">Sign Up</a></p>
-        </div>
-        <div class="col-sm">
-            <p><a href="{% url 'login' %}" class="btn btn-danger p-3 px-xl-4 py-xl-3">Log In</a></p>
+            <div class="signin-form">
+                <h2 class="mb-4">Choose the option</h2>
+
+          <div class="row">
+              <div class="col-sm">
+                  <p><a href="{% url 'sign-up' %}"><input type="submit" name="signin" id="signin" class="form-submit" value="Sign up"/></a></p>
+              </div>
+              <div class="col-sm">
+                  <p><a href="{% url 'login' %}"> <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/> </a></p>
+              </div>
+          </div>
+
+            </div>
         </div>
     </div>
-
-</div>
 </section>
-</div>
+
 {% endblock %}

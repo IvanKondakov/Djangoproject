@@ -4,26 +4,37 @@
 Вход
 {% endblock %}
 {% block content %}
-<div id="colorlib-main">
-    <section class="ftco-section contact-section">
-        <div class="container">
+<section class="sign-in">
+    <div class="container">
+        <div class="signin-content">
+            <div class="signin-image">
+                <figure><img src="{% static 'reg/images/nabelomfone12.png' %}" alt="sing up image"></figure>
+                <a href="{% url 'sign-up' %}" class="signup-image-link">Create an account</a>
+            </div>
 
-    <form method="post">
-      {% csrf_token %}
-      {{ form.username }}
-      {{ form.password }}
-      <input type="submit" class="fadeIn fourth" value="Log In">
-    </form>
-
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a> <br>
-      <a class="underlineHover" href="{% url 'sign-up' %}">Register</a>
+            <div class="signin-form">
+                <h2 class="form-title">Sign up</h2>
+                <form method="POST" class="register-form" id="login-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        {{ form.username }}
+                    </div>
+                    <div class="form-group">
+                        <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                    {{ form.password }}
+                    </div>
+                    <div class="form-group form-button">
+                        <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                    </div>
+                </form>
+                <div class="social-login">
+                    <ul class="socials">
+                        <li><script async src="https://telegram.org/js/telegram-widget.js?15" data-telegram-login="fortysixth_bot" data-size="large" data-auth-url="http://djblog.me/aft/complete" data-request-access="write"></script></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <script async src="https://telegram.org/js/telegram-widget.js?15" data-telegram-login="fortysixth_bot" data-size="large" data-auth-url="http://djblog.me/aft/complete" data-request-access="write"></script>
-
-</div>
 </section>
-</div>
 {% endblock %}
