@@ -41,8 +41,7 @@ There are two types of registration.
 
 <img src="https://sun9-53.userapi.com/impg/PIOUX3p9aDfgNXvDkVp02hpyAOwp8AUVNgw70A/OWCz6TYM-dg.jpg?size=590x531&quality=96&sign=7eeeea8fe3c802d197fcfad432f5b30f&type=album" width=40% height=55%> </img>
 
-The first is the usual one with entering parameters into the form and confirming. The user enters data into the form after which he is asked to confirm the registration by clicking on the link. The link is now coming to the telegram bot. And it looks like this:
-http://127.0.0.1:8000/aft/activate/MTQ/anpqg1-1085b7d35ed5d1a9fe45797fc6c58b7a/
+The first is the usual one with entering parameters into the form and confirming. The user enters data into the form after which he is asked to confirm the registration by clicking on the link. The link is now coming to the telegram bot.
 
 After confirm we create a profile user and redirect him to site.
 
